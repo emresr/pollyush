@@ -1,0 +1,12 @@
+CREATE DATABASE ;
+
+CREATE TABLE todos(
+  _id SERIAL PRIMARY KEY,
+   VARCHAR(255) NOT NULL,
+   VARCHAR(255),
+    BOOLEAN  DEFAULT '0', 
+
+);
+
+
+INSERT INTO tablename () VALUES ('');

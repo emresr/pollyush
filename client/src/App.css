@@ -1,11 +1,30 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 /* header */
+.header-main {
+	width: 100%;
+	min-height: 30%;
+	text-align: cemter;
+}
+.header.title {
+	margin: 5px;
+	text-align: cemter;
+}
+
+/* mainpage */
+.mainpage-cont {
+	width: 100%;
+	min-height: 100px;
+}
 
 /*input */
 
 /* list */
 
 /* Footer */
+.footer {
+	width: 100%;
+	height: 5px;
+}

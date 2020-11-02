@@ -33,7 +33,12 @@ const List = () => {
 
   console.log(todos);
 
-  return <div>{""}</div>;
+  return;
+  <div>
+    {""}
+
+    <form></form>
+  </div>;
 };
 
 export default List;

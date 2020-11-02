@@ -4,9 +4,8 @@
 
 /* header */
 .header-main {
-	position: absolute;
 	width: 90%;
-	height: 30%;
+	height: 35%;
 }
 .header-title {
 	margin: 0px;
@@ -20,7 +19,18 @@
 /* mainpage */
 .mainpage-cont {
 	width: 100%;
-	min-height: 65%;
+	height: 65%;
+}
+.mainpage-input {
+	display: absolute;
+	width: 40%;
+	background-color: red;
+	float: left;
+}
+.mainpage.list {
+	width: 60%;
+	display: absolute;
+	float: right;
 }
 
 /*input */

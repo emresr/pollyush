@@ -34,11 +34,13 @@ const List = () => {
   console.log(todos);
 
   return;
-  <div>
+  <div classname="mainpage-input">
     {""}
 
     <form></form>
   </div>;
+
+  <div classname="mainpage-list"></div>;
 };
 
 export default List;

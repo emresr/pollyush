@@ -6,7 +6,6 @@ const Mainpage = () => {
 	return (
 		<Fragment>
 			<div classname="leftcolumn">
-				<h1>lmao</h1>
 				<Input />
 			</div>
 			<div classname="rightcolumn">

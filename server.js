@@ -8,6 +8,7 @@ app.use(bodyParser.json())
 
 app.use("/poll/", require("./api/routes/pollRouter.js"))
 
+
 const PORT = process.env.port || 5000
 
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`))

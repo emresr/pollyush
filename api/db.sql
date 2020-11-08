@@ -1,12 +1,10 @@
-CREATE DATABASE ;
+CREATE DATABASE polly;
 
-CREATE TABLE todos(
-  _id SERIAL PRIMARY KEY,
-   VARCHAR(255) NOT NULL,
-   VARCHAR(255),
-    BOOLEAN  DEFAULT '0', 
-
+CREATE TABLE polls(
+  poll_id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  option varchar[]
 );
 
 
-INSERT INTO tablename () VALUES ('');
+INSERT INTO polls (title,option) VALUES ('uno','{lmao,wwq}');

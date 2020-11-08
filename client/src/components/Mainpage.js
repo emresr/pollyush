@@ -1,14 +1,19 @@
-import React from "react";
+import Reac, { Fragment } from "react"
+import Input from "./Input.js"
+import List from "./List.js"
 
 const Mainpage = () => {
 	return (
-		<div className="mainpage-cont">
-			<div classname="mainpage-input">
+		<Fragment>
+			<div classname="leftcolumn">
 				<h1>lmao</h1>
+				<Input />
 			</div>
-			<div classname="mainpage-list">yp</div>
-		</div>
-	);
-};
+			<div classname="rightcolumn">
+				<List />
+			</div>
+		</Fragment>
+	)
+}
 
-export default Mainpage;
+export default Mainpage

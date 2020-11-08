@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 const Header = () => {
 	return (
-		<div className="header-main">
+		<div className="header">
 			<h1 className="text-center mt-5">
 				<b>Polly</b>
 			</h1>
@@ -10,7 +10,7 @@ const Header = () => {
 				<i>A poll app built with React </i>
 			</h4>
 		</div>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header

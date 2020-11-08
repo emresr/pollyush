@@ -8,3 +8,4 @@ CREATE TABLE polls(
 
 
 INSERT INTO polls (title,option) VALUES ('uno','{lmao,wwq}');
+

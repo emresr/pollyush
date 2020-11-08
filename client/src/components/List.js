@@ -1,46 +1,42 @@
-import React, { useState, useEffect } from "react";
-import Update from "./Update";
+import React, { useState, useEffect } from "react"
 
 const List = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([])
 
   const deleteTodo = async (id) => {
     try {
       const deleteTodo = await fetch(`http://localhost:5000/todo/todos/${id}`, {
         method: "DELETE",
-      });
+      })
 
-      setTodos(todos.filter((todo) => todo.todo_id !== id));
+      setTodos(todos.filter((todo) => todo.todo_id !== id))
     } catch (err) {
-      console.error(err.message);
+      console.error(err.message)
     }
-  };
+  }
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:5000/todo/todos");
-      const jsonData = await response.json();
+      const response = await fetch("http://localhost:5000/todo/todos")
+      const jsonData = await response.json()
 
-      setTodos(jsonData);
+      setTodos(jsonData)
     } catch (err) {
-      console.error(err.message);
+      console.error(err.message)
     }
-  };
+  }
 
   useEffect(() => {
-    getTodos();
-  }, []);
+    getTodos()
+  }, [])
 
-  console.log(todos);
+  console.log(todos)
 
-  return;
-  <div classname="mainpage-input">
-    {""}
+  return (
+    <div>
+      <h1>Titlte</h1>
+    </div>
+  )
+}
 
-    <form></form>
-  </div>;
-
-  <div classname="mainpage-list"></div>;
-};
-
-export default List;
+export default List

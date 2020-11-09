@@ -1,7 +1,3 @@
-.App {
-	text-align: center;
-}
-
 /* header */
 .header-main {
 	width: 90%;
@@ -92,6 +88,7 @@ body {
 .leftcolumn {
 	float: left;
 	width: 75%;
+	padding: 10px;
 }
 
 /* Right column */
@@ -153,19 +150,11 @@ body {
 .form-style-6 {
 	font: 95% Arial, Helvetica, sans-serif;
 	max-width: 400px;
-	margin: 10px auto;
+	margin: 10px;
 	padding: 16px;
 	background: #f7f7f7;
 }
-.form-style-6 h1 {
-	background: #43d1af;
-	padding: 20px 0;
-	font-size: 140%;
-	font-weight: 300;
-	text-align: center;
-	color: #fff;
-	margin: -16px -16px 16px -16px;
-}
+
 .form-style-6 input[type="text"],
 .form-style-6 input[type="date"],
 .form-style-6 input[type="datetime"],
@@ -223,5 +212,12 @@ body {
 }
 .form-style-6 input[type="submit"]:hover,
 .form-style-6 input[type="button"]:hover {
-	background: #2ebc99;
+	background: #2ebc00;
+}
+
+/* List */
+
+div.list-item {
+	background-color: blue;
+	max-width: 300px;
 }

@@ -33,8 +33,9 @@ const List = () => {
   console.log(todos)
 
   return (
-    <div>
-      <h1>Titlte</h1>
+    <div className="list-item">
+      <h1>Title %40</h1>
+      <p>Chosen One </p>
     </div>
   )
 }

@@ -22,9 +22,8 @@ const Input = () => {
   return (
     <div class="form-style-6">
       <form>
-        <input type="text" name="field1" placeholder="Your Name" />
-        <input type="email" name="field2" placeholder="Email Address" />
-        <textarea name="field3" placeholder="Type your Message"></textarea>
+        <input type="text" name="field1" placeholder="Title" />
+        <input type="email" name="field2" placeholder="Option" />
         <input type="submit" value="Send" />
       </form>
     </div>

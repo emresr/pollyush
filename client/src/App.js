@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import "./App.css"
 
 import Header from "./components/Header"
 import Mainpage from "./components/Mainpage"
@@ -6,7 +7,7 @@ import Mainpage from "./components/Mainpage"
 function App() {
 	return (
 		<Fragment>
-			<div>
+			<div >
 				<Header />
 				<Mainpage />
 			</div>

@@ -1,42 +1,35 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect , Fragment} from "react"
 
 const List = () => {
-  const [todos, setTodos] = useState([])
+  const [polls, setPolls] = useState([])
 
-  const deleteTodo = async (id) => {
+
+  const getPolls = async () => {
     try {
-      const deleteTodo = await fetch(`http://localhost:5000/todo/todos/${id}`, {
-        method: "DELETE",
-      })
-
-      setTodos(todos.filter((todo) => todo.todo_id !== id))
-    } catch (err) {
-      console.error(err.message)
-    }
-  }
-
-  const getTodos = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/todo/todos")
+      const response = await fetch("http://localhost:5000/polls")
       const jsonData = await response.json()
 
-      setTodos(jsonData)
+      setPolls(jsonData)
     } catch (err) {
       console.error(err.message)
     }
   }
 
   useEffect(() => {
-    getTodos()
+    getPolls()
   }, [])
 
-  console.log(todos)
-
   return (
-    <div className="list-item">
-      <h1>Title %40</h1>
-      <p>Chosen One </p>
+    <div>
+
+    {polls.map(polls => (
+    <div key={polls.poll_id} className="list-item">
+      <h1>{polls.title} </h1>
+      <p>{polls.option} </p>
     </div>
+
+    ))}
+     </div>
   )
 }
 

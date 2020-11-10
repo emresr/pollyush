@@ -6,7 +6,6 @@ import Header from "./Header"
 const Mainpage = () => {
 	return (
 		<Fragment>
-			<Header />
 			<div classname="leftcolumn">
 				<Input />
 			</div>

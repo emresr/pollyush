@@ -1,30 +1,6 @@
 import React from "react"
-import CakeChart from "cake-chart"
-
+import { PieChart } from "react-minimal-pie-chart"
 const PollPage = () => {
-	const TREE = {
-		value: 100,
-		label: "SUM = 100",
-		children: [
-			{
-				value: 50,
-				children: [
-					{
-						value: 10,
-					},
-					{
-						value: 20,
-					},
-				],
-			},
-			{
-				value: 30,
-			},
-			{
-				value: 20,
-			},
-		],
-	}
 	return (
 		<div className="pollpage">
 			<div className="poll-infos">
@@ -33,7 +9,15 @@ const PollPage = () => {
 				<h5>Option1 175 - %50</h5>
 				<h5>Option2 75 - %30 </h5>
 				<h5>Option3 50 - %20</h5>
-				<CakeChart data={TREE} />
+				<PieChart
+					viewBoxSize="[10,10]"
+					data={[
+						{ title: "One", value: 10, color: "#E38627" },
+						{ title: "Two", value: 15, color: "#C13C37" },
+						{ title: "Three", value: 20, color: "#6A2135" },
+					]}
+				/>
+				;
 			</div>
 		</div>
 	)

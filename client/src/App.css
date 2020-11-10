@@ -33,6 +33,20 @@ poll-input {
 }
 /* list */
 
+/* PollPage */
+div.pollpage {
+	display: block;
+	margin: 50px;
+	width: 100%;
+}
+.poll-infos {
+	width: 60%;
+	margin-right: 30px;
+}
+.infos-title {
+	font-size: 30;
+	font-weight: bold;
+}
 /* Footer */
 .footer {
 	width: 100%;

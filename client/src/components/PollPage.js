@@ -9,6 +9,8 @@ const PollPage = () => {
 				<h5>Option1 175 - %50</h5>
 				<h5>Option2 75 - %30 </h5>
 				<h5>Option3 50 - %20</h5>
+			</div>
+			<div>
 				<PieChart
 					viewBoxSize="[10,10]"
 					data={[

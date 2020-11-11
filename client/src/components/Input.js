@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
 
 const Input = () => {
-  const [title, setTitle] = useState("")
-    const [option, setOption] = useState("")
+   const [inputs,setInputs] = useState({
+    title:"",
+    option:""
+   });
 
-  const onSubmitForm = async (e,c) => {
+  const onSubmitForm = async (e) => {
     e.preventDefault()
-    c.preventDefault()
     try {
       const body = { title,option}
       const response = await fetch("http://localhost:5000/polls", {
@@ -24,10 +25,10 @@ const Input = () => {
   return (
     <div class="form-style-6">
       <form onSubmit={onSubmitForm}>
-        <input type="text"   value={title}
-          onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
-        <input type="text" value={title}
-          onChange={(e) => setOption(c.target.value)} placeholder="Title"  placeholder="Option"  />
+        <input type="text"  value={inputs.title}
+          onChange={handleChange} placeholder="Title" />
+        <input type="text"  value={inputs.option}
+          onChange={handleChange} placeholder="Title"  placeholder="Option"  />
         <input type="submit" value="Send" />
       </form>
     </div>

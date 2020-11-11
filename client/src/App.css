@@ -42,10 +42,17 @@ div.pollpage {
 .poll-infos {
 	width: 60%;
 	margin-right: 30px;
+	float: left;
+	padding: 10px;
 }
 .infos-title {
 	font-size: 30;
 	font-weight: bold;
+}
+div.chart {
+	width: 40%;
+	float: left;
+	padding-left: 20px;
 }
 /* Footer */
 .footer {

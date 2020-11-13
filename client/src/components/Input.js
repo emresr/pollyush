@@ -1,36 +1,44 @@
 import React, { useState, useEffect } from "react"
 
 const Input = () => {
-  const [inputs, setInputs] = useState({
-    title: "999",
-    option: "099",
-  })
+  const [title, setTitle] = useState("")
+   const [option, setOption] = useState("")
 
-  function handleChange(evt) {
-    const value = evt.target.value
-    setInputs({
-      ...inputs,
-      [evt.target.name]: value,
-    })
-  }
+const handleSubmit =  async (e) => {
+   e.preventDefault()
+   try {
+          const body = { title,option}
+     const response = await  fetch("http://localhost:5000/polls",{ 
+        method: "POST",
+        title,
+        option
+     })   
+     console.log(response)
+   } catch (err) {
 
-  return (
+   }
+}
+
+return ( 
+
     <div class="form-style-6">
       <form>
         <input
           type="text"
-          value={inputs.title}
-          onChange={handleChange}
+          value={title}
+          onChange={e => setTitle(e.target.value)}
           placeholder="Title"
         />
         <input
           type="text"
-          value={inputs.option}
-          onChange={handleChange}
+          value={option}
+          onChange={e => setOption(e.target.value)}
           placeholder="Title"
           placeholder="Option"
         />
-        <input type="submit" value="Send" />
+        <button onClick={handleSubmit} type="submit" >
+         Mf
+        </button>
       </form>
     </div>
   )

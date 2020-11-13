@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react"
+import Pollapi from "./api/Pollapi"
 
 const Input = () => {
   const [title, setTitle] = useState("")
-   const [option, setOption] = useState("")
+   const [option, setOption] = useState("{}")
 
 const handleSubmit =  async (e) => {
    e.preventDefault()
    try {
-          const body = { title,option}
-     const response = await  fetch("http://localhost:5000/polls",{ 
-        method: "POST",
+     const response = await  Pollapi.post("/",{ 
         title,
         option
      })   

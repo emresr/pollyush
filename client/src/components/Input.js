@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState} from "react"
 import Pollapi from "./api/Pollapi"
 
 const Input = () => {
@@ -32,7 +32,6 @@ return (
           type="text"
           value={option}
           onChange={e => setOption(e.target.value)}
-          placeholder="Title"
           placeholder="Option"
         />
         <button onClick={handleSubmit} type="submit" >

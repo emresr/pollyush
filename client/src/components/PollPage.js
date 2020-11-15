@@ -1,17 +1,35 @@
-import React,{useState,useEffect} from "react"
+import React, { useState, useEffect } from "react"
+import { useParams} from 'react-router-dom'
 import { PieChart } from "react-minimal-pie-chart"
 
-
 const PollPage = () => {
-	//const [polls,setPolls] = useState([]);
+	const [polls,setPolls] = useState([]);
+const idurl =useParams()
+console.log(idurl)
 
+  const getPolls = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/polls/${idurl}')
+      const jsonData = await response.json()
+
+      setPolls(jsonData)
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
+  useEffect(() => {
+    getPolls()
+  }, [])
+console.log(polls)
 	return (
-
-		<div className="pollpage">
+		<div>
+		    {polls.map(polls => (
+		<div className="pollpage" key={polls.idurl}>
 			<div className="poll-infos">
-				<h1 className="infos-title">Title</h1>
+				<h1 className="infos-title">{polls.title}</h1>
 				<h3>Toplam Oy Sayısı:300</h3>
-				<h5>Option1 165 - %50</h5>
+				<h5>{polls.option} - %50</h5>
 				<h5>Option2 75 - %30 </h5>
 				<h5>Option3 50 - %20</h5>
 			</div>
@@ -26,6 +44,8 @@ const PollPage = () => {
 				/>
 			</div>
 		</div>
+		    ))}
+		    </div>
 	)
 }
 

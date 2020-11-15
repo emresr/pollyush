@@ -1,7 +1,7 @@
-import Reac, { Fragment } from "react"
+import React, { Fragment } from "react"
 import Input from "./Input.js"
 import List from "./List.js"
-import Header from "./Header"
+
 
 const Mainpage = () => {
 	return (

@@ -1,6 +1,6 @@
-import React, { Fragment } from "react"
+import React, {} from "react"
 import "./App.css"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Mainpage from "./components/Mainpage"
 import PollPage from "./components/PollPage"
@@ -8,20 +8,15 @@ import Header from "./components/Header"
 
 function App() {
 	return (
-		<Fragment>
+		<div className="container">
+			<Header />
 			<Router>
-				<Header />
-
-				<Route path="/">
-					<Mainpage />
-				</Route>
-
-				<Route exact path="/pollpage">
-					<PollPage />
-				</Route>
+				<Switch>
+					<Route exact path="/" component={Mainpage} />
+					<Route exact path="/pollpage/:id" component={PollPage} />
+				</Switch>
 			</Router>
-		</Fragment>
+		</div>
 	)
 }
-
 export default App

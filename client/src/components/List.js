@@ -1,4 +1,4 @@
-import React, { useState, useEffect , Fragment} from "react"
+import React, { useState, useEffect} from "react"
 
 const List = () => {
   const [polls, setPolls] = useState([])
@@ -18,14 +18,15 @@ const List = () => {
   useEffect(() => {
     getPolls()
   }, [])
-
+  
+console.log(polls)
   return (
     <div>
 
     {polls.map(polls => (
     <div key={polls.poll_id} className="list-item">
       <h1>{polls.title} </h1>
-      <p>{polls.option} </p>
+      <h1>{polls.option} </h1> 
     </div>
 
     ))}

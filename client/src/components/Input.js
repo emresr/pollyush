@@ -1,35 +1,42 @@
-import React, { useState, useEffect } from "react"
+import React, { useState} from "react"
+import Pollapi from "./api/Pollapi"
 
 const Input = () => {
-   const [inputs,setInputs] = useState({
-    title:"",
-    option:""
-   });
+  const [title, setTitle] = useState("")
+   const [option, setOption] = useState("{}")
 
-  const onSubmitForm = async (e) => {
-    e.preventDefault()
-    try {
-      const body = { title,option}
-      const response = await fetch("http://localhost:5000/polls", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      })
+const handleSubmit =  async (e) => {
+   e.preventDefault()
+   try {
+     const response = await  Pollapi.post("/",{ 
+        title,
+        option
+     })   
+     console.log(response)
+   } catch (err) {
 
-      window.location = "/"
-    } catch (err) {
-      console.error(err.message)
-    }
-  }
+   }
+}
 
-  return (
+return ( 
+
     <div class="form-style-6">
-      <form onSubmit={onSubmitForm}>
-        <input type="text"  value={inputs.title}
-          onChange={handleChange} placeholder="Title" />
-        <input type="text"  value={inputs.option}
-          onChange={handleChange} placeholder="Title"  placeholder="Option"  />
-        <input type="submit" value="Send" />
+      <form>
+        <input
+          type="text"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="Title"
+        />
+        <input
+          type="text"
+          value={option}
+          onChange={e => setOption(e.target.value)}
+          placeholder="Option"
+        />
+        <button onClick={handleSubmit} type="submit" >
+         Mf
+        </button>
       </form>
     </div>
   )

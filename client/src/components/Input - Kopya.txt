@@ -1,0 +1,38 @@
+import React, { useState, useEffect } from "react"
+
+const Input = () => {
+   const [inputs,setInputs] = useState({
+    title:"",
+    option:""
+   });
+
+  const onSubmitForm = async (e) => {
+    e.preventDefault()
+    try {
+      const body = { title,option}
+      const response = await fetch("http://localhost:5000/polls", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      })
+
+      window.location = "/"
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
+  return (
+    <div class="form-style-6">
+      <form onSubmit={onSubmitForm}>
+        <input type="text"  value={inputs.title}
+          onChange={handleChange} placeholder="Title" />
+        <input type="text"  value={inputs.option}
+          onChange={handleChange} placeholder="Title"  placeholder="Option"  />
+        <input type="submit" value="Send" />
+      </form>
+    </div>
+  )
+}
+
+export default Input

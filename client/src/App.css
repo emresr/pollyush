@@ -31,7 +31,13 @@ poll-input {
 	content: "\a";
 	border: 3px;
 }
-/* list */
+
+/* List */
+
+div.list-item {
+	background-color: blue;
+	max-width: 300px;
+}
 
 /* PollPage */
 div.pollpage {
@@ -68,7 +74,7 @@ div.chart {
 body {
 	font-family: Verdana;
 	padding: 10px;
-	background: #f1f1f1;
+	background: #4A3636;
 }
 
 /* Header/Blog Title */
@@ -236,9 +242,3 @@ body {
 	background: #2ebc00;
 }
 
-/* List */
-
-div.list-item {
-	background-color: blue;
-	max-width: 300px;
-}

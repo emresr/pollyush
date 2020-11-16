@@ -22,7 +22,7 @@ const List = () => {
 console.log(polls)
   return (
     <div>
-
+   <h6> Latest Polls </h6>
     {polls.map(polls => (
     <div key={polls.poll_id} className="list-item">
       <h1>{polls.title} </h1>

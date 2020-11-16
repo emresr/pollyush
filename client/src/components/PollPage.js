@@ -7,9 +7,10 @@ const PollPage = () => {
 const idurl =useParams()
 console.log(idurl)
 
+
   const getPolls = async () => {
     try {
-      const response = await fetch('http://localhost:5000/polls/${idurl}')
+      const response = await fetch(`http://localhost:5000/polls/${idurl.id}`)
       const jsonData = await response.json()
 
       setPolls(jsonData)
@@ -21,6 +22,7 @@ console.log(idurl)
   useEffect(() => {
     getPolls()
   }, [])
+  
 console.log(polls)
 	return (
 		<div>

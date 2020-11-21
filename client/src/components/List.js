@@ -22,7 +22,7 @@ const List = () => {
   
   return (
   <div className="column">
-      <div classname="blue-column">
+      <div classname="green-column">
 
          <h6 className="list-title"> Latest Polls</h6>
 

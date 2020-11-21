@@ -11,12 +11,12 @@ router.get("/polls", async (req, res) => {
   }
 })
 
+
+
 router.get("/polls/:id", async (req, res) => {
   try {
     const { id } = req.params
-    const Poll = await pool.query("SELECT * FROM polls WHERE poll_id = $1", [
-      id,
-    ])
+    const Poll = await pool.query("SELECT * FROM polls WHERE poll_id = $1", [id])
     res.json(Poll.rows[0])
   } catch (err) {
     console.error(err.message)

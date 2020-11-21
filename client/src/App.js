@@ -8,15 +8,15 @@ import Header from "./components/Header"
 
 function App() {
 	return (
-		<div className="container">
-			<Header />
+		<>
+			<Header/>
 			<Router>
 				<Switch>
 					<Route exact path="/" component={Mainpage} />
 					<Route exact path="/pollpage/:id" component={PollPage} />
 				</Switch>
 			</Router>
-		</div>
+		</>
 	)
 }
 export default App

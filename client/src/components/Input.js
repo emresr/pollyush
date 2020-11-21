@@ -19,9 +19,10 @@ const handleSubmit =  async (e) => {
 }
 
 return ( 
+  <div className="column">
+      <div classname="blue-column">
 
-    <div class="form-style-6">
-      <form>
+      <form className="form-style-6">
         <input
           type="text"
           value={title}
@@ -39,6 +40,7 @@ return (
         </button>
       </form>
     </div>
+  </div>
   )
 }
 

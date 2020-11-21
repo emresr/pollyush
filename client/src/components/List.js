@@ -11,6 +11,7 @@ const List = () => {
 
       setPolls(jsonData)
     } catch (err) {
+
       console.error(err.message)
     }
   }
@@ -19,18 +20,29 @@ const List = () => {
     getPolls()
   }, [])
   
-console.log(polls)
   return (
-    <div>
-   <h6> Latest Polls </h6>
+  <div className="column">
+      <div classname="blue-column">
+
+         <h6 className="list-title"> Latest Polls</h6>
+
+     <div  className="list-item">
+      <h1>Tİtle 1111 </h1>
+      
+      <h3>Option </h3> 
+    </div>
+
+
     {polls.map(polls => (
     <div key={polls.poll_id} className="list-item">
       <h1>{polls.title} </h1>
-      <h1>{polls.option} </h1> 
+      
+      <h3>{polls.option} </h3> 
     </div>
 
     ))}
      </div>
+    </div>
   )
 }
 

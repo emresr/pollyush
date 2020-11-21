@@ -84,9 +84,7 @@ body {
 	background: white;
 }
 
-.header h1 {
-	font-size: 50px;
-}
+
 
 /* Style the top navigation bar */
 .topnav {
@@ -114,7 +112,7 @@ body {
 /* Left column */
 .leftcolumn {
 	float: left;
-	width: 75%;
+	width: 60%;
 	padding: 10px;
 }
 
@@ -242,3 +240,35 @@ body {
 	background: #2ebc00;
 }
 
+
+			.row {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 100%;
+			}
+
+			.column {
+				display: flex;
+				flex-direction: column;
+				flex-basis: 100%;
+				flex:1;
+			}
+			.blue-column {
+				background-color: blue;
+				height: 100px;
+			}
+
+			.green-column {
+				background-color: green;
+				height: 100px;
+				margin: 15px;
+				align-content: center
+			}
+
+
+			/* List */
+
+			.list-title{
+				text-align: center
+			}

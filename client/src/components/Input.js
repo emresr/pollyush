@@ -24,6 +24,7 @@ return (
 
       <form className="form-style-6">
         <input
+        size="50"
           type="text"
           value={title}
           onChange={e => setTitle(e.target.value)}

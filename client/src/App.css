@@ -154,7 +154,7 @@ body {
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 100px) {
 	.blue-column,
 	.green-column {
 		background-color: yellow;
@@ -235,34 +235,4 @@ body {
 }
 
 
-			.row {
-				display: flex;
-				flex-direction: row;
-				flex-wrap: wrap;
-				width: 100%;
-			}
-
-			.column {
-				display: flex;
-				flex-direction: column;
-				flex-basis: 100%;
-				flex:1;
-			}
-			.blue-column {
-				background-color: blue;
-				height: 100px;
-			}
-
-			.green-column {
-				background-color: green;
-				height: 100px;
-				margin: 15px;
-				align-content: center
-			}
-
-
-			/* List */
-
-			.list-title{
-				text-align: center
-			}
+	

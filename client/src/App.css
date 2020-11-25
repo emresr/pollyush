@@ -12,23 +12,12 @@
 	vertical-align: middle;
 }
 
-/* mainpage */
-.mainpage-cont {
-	width: 100%;
-	height: 65%;
-}
-.mainpage-input .mainpage-list {
-	height: 50%;
-	width: 50%;
-	position: fixed;
-	overflow-x: hidden;
-	padding-top: 20px;
-}-
 
 /*input */
 .input {
 	margin-top: 50px;
 }
+
 
 /* List */
 .list-title{
@@ -57,26 +46,21 @@
 }
 
 /* PollPage */
-div.pollpage {
-	display: block;
-	margin: 50px;
-	width: 100%;
-}
-.poll-infos {
+
+.pollpage {
 	width: 60%;
 	margin-right: 30px;
 	float: left;
 	padding: 10px;
 }
-.infos-title {
+.pollpage-title {
 	font-size: 30;
 	font-weight: bold;
 }
-div.chart {
-	width: 40%;
-	float: left;
-	padding-left: 20px;
+.chart{
+	margin-top: 30px
 }
+
 /* Footer */
 .footer {
 	width: 100%;

@@ -29,9 +29,9 @@ const PollPage = () => {
 console.log(polls)
 
 	const pollpage = (
-
-		<div>
-			<div className="pollpage">
+      <div className="container">
+		<div className="row">
+			<div className="col-sm ">
 				<div className="poll-infos">
 					<h1 className="infos-title">{polls.title}</h1>
 					<h3>Toplam Oy Sayısı:300</h3>
@@ -39,7 +39,8 @@ console.log(polls)
 						<h5>{polls.option} - %50</h5>
 					</div>
 				</div>
-				<div className="chart">
+            </div>
+				<div className="col-sm">
 					<PieChart
 						viewBoxSize="[10,10]"
 						data={[
@@ -49,8 +50,9 @@ console.log(polls)
 						]}
 					/>
 				</div>
-			</div>
+			
 		</div>
+	  </div>
 	);
 
 	return <>

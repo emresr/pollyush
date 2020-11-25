@@ -21,15 +21,13 @@ const List = () => {
   }, [])
   
   return (
-  <div className="column">
-      <div classname="green-column">
-
-         <h6 className="list-title"> Latest Polls</h6>
+<div class="col-sm">
+     <h6 className="list-title"> Latest Polls</h6>
 
      <div  className="list-item">
-      <h1>Tİtle 1111 </h1>
+       <h1 className="item-title">Tİtle 1111 </h1>
       
-      <h3>Option </h3> 
+       <h3 className="item-option">Option </h3> 
     </div>
 
 
@@ -41,7 +39,6 @@ const List = () => {
     </div>
 
     ))}
-     </div>
     </div>
   )
 }

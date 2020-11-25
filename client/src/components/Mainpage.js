@@ -6,9 +6,11 @@ import List from "./List.js"
 const Mainpage = () => {
 	return (
 		<>
-		<div className="row">
+		<div className="container">
+		 <div className="row">
 				<Input />
 				<List />
+			</div>
 			</div>
 		</>
 	)

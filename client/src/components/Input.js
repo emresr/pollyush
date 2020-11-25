@@ -3,7 +3,7 @@ import Pollapi from "./api/Pollapi"
 
 const Input = () => {
   const [title, setTitle] = useState("")
-   const [option, setOption] = useState("{}")
+  const [option, setOption] = useState("{}")
 
 const handleSubmit =  async (e) => {
    e.preventDefault()
@@ -19,10 +19,10 @@ const handleSubmit =  async (e) => {
 }
 
 return ( 
-  <div className="column">
-      <div classname="blue-column">
+  
+      <div class="col-sm input">
 
-      <form className="form-style-6">
+      <form className="form-style-6 ">
         <input
         size="50"
           type="text"
@@ -41,7 +41,6 @@ return (
         </button>
       </form>
     </div>
-  </div>
   )
 }
 

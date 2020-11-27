@@ -27,32 +27,27 @@ const PollPage = () => {
 	}, []);
 
 console.log(polls)
-const k = [{title : "Malcom", option: [{option1:"lmao"}] }]
 
-	const pollpage = (
+
+const k = [{title : "Whats your favor", option: [{option_id:1,option:"lmdao"},{option_id:2,option:"lmaorrrr"}] }]
+const pollpage = (
       <div className="container">
 		<div className="row">
 			<div className="col-sm pollpage-item">
-				<div className="pollpage">
-				    {k.map((title,option) => ( 
-					    	<div>
-				    	
-					<h1 className="pollpage-title">{option.option1}Whats your favor?</h1>
-										 </div>
+				<div className="pollpage-title">
+				{k.map(k=> ( 
+                    <h2>{k.title}</h2>
+					))}
 
-
-					 ))}
-					<h3>Votes:300</h3>
-					<div>
-						<h5>Pizza - %50</h5>
-						<h5>Hamburger - %50</h5>
-						<h5>Lahmacun - %50</h5>
-						<h5>HotDog - %50</h5>
-					</div>
-					
+				    {k.map(k=> ( 
+				  k.option.map(option => (
+                    <h2 key={option.option_key}>{option.option}</h2>
+                    ))        
+					))}
+     
 				</div>
             </div>
-            
+            {k.map(k => (
 				<div className="col-sm chart">
 					<PieChart
 						viewBoxSize="[150,150]"
@@ -63,7 +58,7 @@ const k = [{title : "Malcom", option: [{option1:"lmao"}] }]
 						]}
 					/>
 				</div>
-			
+			))}
 	   {/*
             <div className="col-sm ">
 				<div className="poll-infos">

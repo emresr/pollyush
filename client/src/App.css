@@ -44,14 +44,14 @@
 .item-option{
 	font-size: 20px;
 }
+.list-link{
 
-/* PollPage */
-
-.pollpage {
-	width: 60%;
-	float: left;
-	padding: 10px;
 }
+/* PollPage */
+.polly{
+	align-content: center
+}
+
 .pollpage-title {
 	font-size: 30px;
 	font-weight: bold;
@@ -68,6 +68,29 @@
 
 /* Result */ 
 
+.pollpage-title {
+	font-size: 30px;
+	font-weight: bold;
+}
+.pollpage-item{
+	margin-top: 30px;
+}
+.chart{
+	margin: 30px 0px 0px 50px
+}
+.pollpage-check{
+	margin-right: 5px
+}
+
+
+.result-button {
+		border-style: solid;
+	border-width: 3px;
+	border-radius: 10px;
+	border-color: gray;	
+		font-size: 30px;
+}
+
 /* Footer */
 .footer {
 	width: 100%;
@@ -82,7 +105,7 @@
 body {
 	font-family: Verdana;
 	padding: 10px;
-	background: #4A3636;
+	background: #193b40;
 }
 
 /* Header/Blog Title */

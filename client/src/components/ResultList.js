@@ -29,7 +29,7 @@ const ResultList = () => {
 console.log(polls)
 
 
-const k = [{title : "Whats your favor", option: [{option_id:1,option:"lmdao",score:0},{option_id:2,option:"lmaorrrr",score:2}] }]
+const k = [{title : "Whats your favor?", option: [{option_id:1,option:"lmdao",score:0},{option_id:2,option:"lmaorrrr",score:2}] }]
 const pollpage = (
       <div className="container">
 		<div className="row">

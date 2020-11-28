@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+ 
 import { useParams,Link } from "react-router-dom";
 import { PieChart } from "react-minimal-pie-chart";
 
@@ -8,6 +9,7 @@ const PollPage = () => {
 	
 	const [count, setCount] = useState(0);
 	const id = useParams();
+
 
 
 	const getPolls = async () => {
@@ -29,8 +31,7 @@ const PollPage = () => {
 
 console.log(polls)
 
-
-const k = [{title : "Whats your favor", option: [{option_id:1,option:"lmdao",score:0},{option_id:2,option:"lmaorrrr",score:2}] }]
+const k = [{title : "Whats your favor?", option: [{option_id:1,option:"lmdao",score:0},{option_id:2,option:"lmaorrrr",score:2}] }]
 const pollpage = (
       <div className="container">
 		<div className="row">
@@ -52,9 +53,9 @@ const pollpage = (
 
                     ))        
 					))}
-               <button component={Link} to="/result/:id">
-                      Link
-                  </button>
+				   <Link className="btn result-button" to={`/result/${id.id}`}>
+                                  Result
+                   </Link>
 				</div>
             </div>
 

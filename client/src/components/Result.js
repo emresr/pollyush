@@ -1,6 +1,8 @@
 import React, { Fragment } from "react"
-import Input from "./Input.js"
-import List from "./List.js"
+
+
+import ResultList from "./ResultList.js"
+import Chart from "./Chart.js"
 
 
 const Result = () => {

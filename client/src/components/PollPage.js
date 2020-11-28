@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { PieChart } from "react-minimal-pie-chart";
-import { Link }
+
 
 const PollPage = () => {
 	const [polls,setPolls] = useState([]);
@@ -52,7 +52,9 @@ const pollpage = (
 
                     ))        
 					))}
-     
+               <button component={Link} to="/result/:id">
+                      Link
+                  </button>
 				</div>
             </div>
 

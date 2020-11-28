@@ -4,6 +4,7 @@ import Pollapi from "./api/Pollapi"
 const Input = () => {
   const [title, setTitle] = useState("")
   const [option, setOption] = useState("{}")
+  
 
 const handleSubmit =  async (e) => {
    e.preventDefault()

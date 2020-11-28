@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PieChart } from "react-minimal-pie-chart";
+import { Link }
 
 const PollPage = () => {
 	const [polls,setPolls] = useState([]);
@@ -41,26 +42,21 @@ const pollpage = (
 
 				    {k.map(k=> ( 
 				  k.option.map(option => (
-				  
-                    <h2 key={option.option_key}>{option.option}</h2>
+
+				  <div  key={option.option_key}>
+
+				  <input class="pollpage-check" type="checkbox"/>
+                  <label class="">{option.option}</label>
+
+                  </div>
+
                     ))        
 					))}
      
 				</div>
             </div>
-            {k.map(k => (
-				<div className="col-sm chart">
-					<PieChart
-						viewBoxSize="[150,150]"
-						data={[
-							{ title: "One", value: 10, color: "#E38627" },
-							{ title: "Two", value: 15, color: "#C13C37" },
-							{ title: "Three", value: 20, color: "#6A2135" },
-						]}
-					/>
-				</div>
-			))}
 
+           
 
 	   {/*
             <div className="col-sm ">

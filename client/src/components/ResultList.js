@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import { PieChart } from "react-minimal-pie-chart";
 
 const ResultList = () => {
 	const [polls,setPolls] = useState([]);
@@ -29,7 +30,15 @@ const ResultList = () => {
 console.log(polls)
 
 
-const k = [{title : "Whats your favor?", option: [{option_id:1,option:"lmdao",score:0},{option_id:2,option:"lmaorrrr",score:2}] }]
+const k = [{title : "Whats your favor?", option: [{option_id:1,option:"lmdao",score:15},{option_id:2,option:"lmaorrrr",score:15}] }]
+const score = 				   k.map(k=> ( 
+				  k.option.map((option) => ( option[1]
+
+        ))        
+		))
+                console.log(score)
+
+
 const pollpage = (
       <div className="container">
 		<div className="row">
@@ -42,18 +51,34 @@ const pollpage = (
 				    {k.map(k=> ( 
 				  k.option.map(option => (
 
-				  <div  key={option.option_key}>
+				  <div  key={option.option_id}>
                   <label class="">{option.option}</label>
 
                   </div>
 
-                    ))        
-					))}
-     
+                   ))        
+					))} 
+                
 				</div>
             </div>
+             
+               {k.map(k=> ( 
+	  k.option.map(option => (
 
-           
+           <div className="col-sm" key={option.option_id}>
+                    
+					<PieChart
+						viewBoxSize="[10,10]"
+						data={[
+							{ title: "One", value: 15, color: "#E38627" },
+							{ title: "Two", value: 15, color: "#C13C37" },
+							{ title: "Three", value: 15, color: "#6A2135" },
+						]}
+					/>
+				 </div>
+				 )) 
+                 	))} 
+	  }
 
 	   {/*
             <div className="col-sm ">

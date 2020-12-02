@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 import Input from "./Input.js"
 import List from "./List.js"
 
-import { Doughnut } from 'react-chartjs-2';
+import PieChart from "react-minimal-pie-chart"
 
 const Result = () => {
 	return (

@@ -4,6 +4,7 @@ import Pollapi from "./api/Pollapi"
 const Input = () => {
   const [title, setTitle] = useState("")
   const [option, setOption] = useState("{}")
+    const [score, setScore] = useState("{}")
   
 
 const handleSubmit =  async (e) => {
@@ -11,7 +12,8 @@ const handleSubmit =  async (e) => {
    try {
      const response = await  Pollapi.post("/",{ 
         title,
-        option
+        option,
+        score
      })   
      console.log(response)
    } catch (err) {
@@ -36,6 +38,12 @@ return (
           value={option}
           onChange={e => setOption(e.target.value)}
           placeholder="Option"
+        />
+        <input
+          type="text"
+          value={score}
+          onChange={e => setScore(e.target.value)}
+          placeholder="Score"
         />
         <button onClick={handleSubmit} type="submit" >
          Mf

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { Pie } from 'react-chartjs-2';
+import PieChart from "react-minimal-pie-chart"
 
 const ResultList = () => {
 	const [polls,setPolls] = useState([]);

@@ -38,10 +38,10 @@ router.delete("/polls/:id", async (req, res) => {
 
 router.post("/polls", async (req, res) => {
   try {
-    const { title, option } = req.body
+    const { title, option ,score} = req.body
     const newPoll = await pool.query(
-      "INSERT INTO polls (title,option) VALUES ( $1,$2) RETURNING *",
-      [title, option]
+      "INSERT INTO polls (title,option,score) VALUES ( $1,$2,$3) RETURNING *",
+      [title, option,score]
     )
 
     res.json(newPoll.rows[0])

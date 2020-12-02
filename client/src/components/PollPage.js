@@ -30,12 +30,28 @@ const PollPage = () => {
 	}, []);
 
 console.log(polls)
-
-const k = [{title : "Whats your favor?", option: [{option_id:1,option:"lmdao",score:0},{option_id:2,option:"lmaorrrr",score:2}] }]
 const pollpage = (
       <div className="container">
 		<div className="row">
 			<div className="col-sm pollpage-item">
+				<div>
+                    <h2  className="pollpage-title">{polls.title}</h2>
+				  <div >
+				  <input class="pollpage-check" type="checkbox"/>
+                  <label class="pollpage-option">{polls.option}</label>
+
+                  </div>
+
+				   <Link className="btn result-button" to={`/result/${id.id}`}>
+                                  Result
+                   </Link>
+				</div>
+            </div>
+
+	   
+
+	   {/*
+            <div className="col-sm pollpage-item">
 				<div className="pollpage-title">
 				{k.map(k=> ( 
                     <h2>{k.title}</h2>
@@ -56,19 +72,6 @@ const pollpage = (
 				   <Link className="btn result-button" to={`/result/${id.id}`}>
                                   Result
                    </Link>
-				</div>
-            </div>
-
-           
-
-	   {/*
-            <div className="col-sm ">
-				<div className="poll-infos">
-					<h1 className="infos-title">{polls.title}</h1>
-					<h3>Toplam Oy Sayısı:300</h3>
-					<div>
-						<h5>{polls.option} - %50</h5>
-					</div>
 				</div>
             </div>
             

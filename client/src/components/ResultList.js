@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-
+import {useParams} from "react-router-dom"
 import PieChart from "react-minimal-pie-chart"
+
 
 const ResultList = () => {
 	const [polls,setPolls] = useState([]);
 	
 	const [count, setCount] = useState(0);
-	const id = useParams();
-
+ const id = useParams();
 
 	const getPolls = async () => {
 		try {

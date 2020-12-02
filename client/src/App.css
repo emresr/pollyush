@@ -67,8 +67,11 @@
 }
 
 /* Result */ 
-
-.pollpage-title {
+.pollpage-title{
+	font-size: 40px;
+	font-weight: bold;
+}
+.pollpage-option {
 	font-size: 30px;
 	font-weight: bold;
 }

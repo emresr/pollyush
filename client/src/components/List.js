@@ -1,8 +1,9 @@
 import React, { useState, useEffect} from "react"
-import {Link} from "react-router-dom"
+import {Link,useParams} from "react-router-dom"
+
 const List = () => {
   const [polls, setPolls] = useState([])
-
+  const id = useParams()
 
   const getPolls = async () => {
     try {
@@ -27,7 +28,7 @@ const List = () => {
      <div  className="list-item">
                       <Link className="btn list-link" to={`/pollpage/1`}>
 
-       <h1 className="item-title">Tİtle 1111 </h1>
+       <h1 className="item-title">Title 1111 </h1>
                          </Link>
 
        <h3 className="item-option">Option </h3> 
@@ -37,7 +38,7 @@ const List = () => {
 
     {polls.map(polls => (
     <div key={polls.poll_id} className="list-item">
-                 <Link className="btn list-link" to={`/pollpage/1`}>
+                 <Link className="btn list-link" to={`/pollpage/${polls.poll_id} `}>
                                         <h1>{polls.title} </h1>
                    </Link>
       

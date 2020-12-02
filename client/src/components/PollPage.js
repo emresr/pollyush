@@ -20,6 +20,9 @@ const PollPage = () => {
 			const jsonData = await response.json();
 
 			setPolls(jsonData)
+			const q = polls.option.join();
+console.log(q)
+
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -29,7 +32,8 @@ const PollPage = () => {
 		getPolls();
 	}, []);
 
-console.log(polls)
+console.log(polls.score)
+
 const pollpage = (
       <div className="container">
 		<div className="row">
@@ -38,7 +42,9 @@ const pollpage = (
                     <h2  className="pollpage-title">{polls.title}</h2>
 				  <div >
 				  <input class="pollpage-check" type="checkbox"/>
-                  <label class="pollpage-option">{polls.option}</label>
+
+				  	
+                  <label class="pollpage-option">{polls.option} - {polls.score}</label>
 
                   </div>
 

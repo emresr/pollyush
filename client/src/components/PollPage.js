@@ -8,7 +8,7 @@ import { PieChart } from "react-minimal-pie-chart";
 const PollPage = () => {
 	const [polls, setPolls] = useState([]);
 
-	const [count, setCount] = useState(0);
+	const [count, setCount] = useState();
 	const id = useParams();
 
 	const getPolls = async () => {
@@ -20,9 +20,7 @@ const PollPage = () => {
 
 			setPolls(jsonData);
 
-			setPolls(jsonData);
-			const q = polls.option.join();
-			console.log(q);
+			
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -32,7 +30,7 @@ const PollPage = () => {
 		getPolls();
 	}, []);
 
-	console.log(polls);
+	console.log(polls.option);
 
 	const k = [
 		{
@@ -52,7 +50,7 @@ const PollPage = () => {
 							<h2>{k.title}</h2>
 						))}
 
-						{k.map((k) =>
+						{k.map((k) => ( 
 							k.option.map((option) => (
 								<div key={option.option_key}>
 									<input
@@ -62,7 +60,7 @@ const PollPage = () => {
 									<label class="">{option.option}</label>
 								</div>
 							))
-						)}
+						))}
 						<Link
 							className="btn result-button"
 							to={`/result/${id.id}`}
@@ -70,12 +68,14 @@ const PollPage = () => {
 							Result
 						</Link>
 
+
+
 						<h1>Share On Twitter </h1>
 						<h1>Share On Dis </h1>
-						<h1> </h1>
-						<h1> </h1>
 					</div>
 				</div>
+
+
 
 				{/*
             <div className="col-sm ">

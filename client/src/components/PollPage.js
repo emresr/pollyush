@@ -21,6 +21,7 @@ const PollPage = () => {
 			setPolls(jsonData);
 
 			
+			
 		} catch (err) {
 			console.error(err.message);
 		}

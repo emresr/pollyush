@@ -34,7 +34,6 @@ const List = () => {
     </div>
 
 
-
     {polls.map(polls => (
     <div key={polls.poll_id} className="list-item">
                  <Link className="btn list-link" to={`/pollpage/1`}>

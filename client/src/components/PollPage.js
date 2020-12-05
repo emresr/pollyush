@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
- 
-import { useParams,Link } from "react-router-dom";
+
+import { useParams, Link } from "react-router-dom";
 import { PieChart } from "react-minimal-pie-chart";
 
-
 const PollPage = () => {
-	const [polls,setPolls] = useState([]);
-	
+	const [polls, setPolls] = useState([]);
+
 	const [count, setCount] = useState(0);
 	const id = useParams();
-
-
 
 	const getPolls = async () => {
 		try {
@@ -19,7 +16,7 @@ const PollPage = () => {
 			);
 			const jsonData = await response.json();
 
-			setPolls(jsonData)
+			setPolls(jsonData);
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -29,39 +26,52 @@ const PollPage = () => {
 		getPolls();
 	}, []);
 
-console.log(polls)
+	console.log(polls);
 
-const k = [{title : "Whats your favor?", option: [{option_id:1,option:"lmdao",score:0},{option_id:2,option:"lmaorrrr",score:2}] }]
-const pollpage = (
-      <div className="container">
-		<div className="row">
-			<div className="col-sm pollpage-item">
-				<div className="pollpage-title">
-				{k.map(k=> ( 
-                    <h2>{k.title}</h2>
-					))}
+	const k = [
+		{
+			title: "Whats your favor?",
+			option: [
+				{ option_id: 1, option: "lmdao", score: 0 },
+				{ option_id: 2, option: "lmaorrrr", score: 2 },
+			],
+		},
+	];
+	const pollpage = (
+		<div className="container">
+			<div className="row">
+				<div className="col-sm pollpage-item">
+					<div className="pollpage-title">
+						{k.map((k) => (
+							<h2>{k.title}</h2>
+						))}
 
-				    {k.map(k=> ( 
-				  k.option.map(option => (
+						{k.map((k) =>
+							k.option.map((option) => (
+								<div key={option.option_key}>
+									<input
+										class="pollpage-check"
+										type="checkbox"
+									/>
+									<label class="">{option.option}</label>
+								</div>
+							))
+						)}
+						<Link
+							className="btn result-button"
+							to={`/result/${id.id}`}
+						>
+							Result
+						</Link>
 
-				  <div  key={option.option_key}>
-
-				  <input class="pollpage-check" type="checkbox"/>
-                  <label class="">{option.option}</label>
-
-                  </div>
-
-                    ))        
-					))}
-				   <Link className="btn result-button" to={`/result/${id.id}`}>
-                                  Result
-                   </Link>
+						<h1>Share On Twitter </h1>
+						<h1>Share On Dis </h1>
+						<h1> </h1>
+						<h1> </h1>
+					</div>
 				</div>
-            </div>
 
-           
-
-	   {/*
+				{/*
             <div className="col-sm ">
 				<div className="poll-infos">
 					<h1 className="infos-title">{polls.title}</h1>
@@ -83,14 +93,10 @@ const pollpage = (
 					/>
 				</div>
       */}
-			
+			</div>
 		</div>
-	  </div>
 	);
 
-	return <>
-	{pollpage}
-
-	</>;
+	return <>{pollpage}</>;
 };
 export default PollPage;

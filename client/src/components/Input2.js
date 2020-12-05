@@ -44,7 +44,7 @@ render() {
           this.state.options.map((option,index) => {
             return(
                <div key ={index}>
-                   <input onChange={(e)=>this.handleChange(e)} value={option} />
+                   <input onChange={(e)=>this.handleChange(e,index)} value={option} />
                    <button onClick={()=>this.handleRemove(index)}>  </button>
                </div>
             )

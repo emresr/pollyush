@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
- 
-import { useParams,Link } from "react-router-dom";
+
+import Header from "./Header";
+
+import { useParams, Link } from "react-router-dom";
 import { PieChart } from "react-minimal-pie-chart";
 
-
 const PollPage = () => {
-	const [polls,setPolls] = useState([]);
-	
+	const [polls, setPolls] = useState([]);
+
 	const [count, setCount] = useState(0);
 	const id = useParams();
-
-
 
 	const getPolls = async () => {
 		try {
@@ -19,10 +18,11 @@ const PollPage = () => {
 			);
 			const jsonData = await response.json();
 
-			setPolls(jsonData)
-			const q = polls.option.join();
-console.log(q)
+			setPolls(jsonData);
 
+			setPolls(jsonData);
+			const q = polls.option.join();
+			console.log(q);
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -32,9 +32,65 @@ console.log(q)
 		getPolls();
 	}, []);
 
+	console.log(polls);
+
+	const k = [
+		{
+			title: "Whats your favor?",
+			option: [
+				{ option_id: 1, option: "lmdao", score: 0 },
+				{ option_id: 2, option: "lmaorrrr", score: 2 },
+			],
+		},
+	];
+	const pollpage = (
+		<div className="container">
+			<div className="row">
+				<div className="col-sm pollpage-item">
+					<div className="pollpage-title">
+						{k.map((k) => (
+							<h2>{k.title}</h2>
+						))}
+
+						{k.map((k) =>
+							k.option.map((option) => (
+								<div key={option.option_key}>
+									<input
+										class="pollpage-check"
+										type="checkbox"
+									/>
+									<label class="">{option.option}</label>
+								</div>
+							))
+						)}
+						<Link
+							className="btn result-button"
+							to={`/result/${id.id}`}
+						>
+							Result
+						</Link>
+
+						<h1>Share On Twitter </h1>
+						<h1>Share On Dis </h1>
+						<h1> </h1>
+						<h1> </h1>
+					</div>
+				</div>
+
+				{/*
+            <div className="col-sm ">
+				<div className="poll-infos">
+					<h1 className="infos-title">{polls.title}</h1>
+					<h3>Toplam Oy Sayısı:300</h3>
+					<div>
+						<h5>{polls.option} - %50</h5>
+					</div>
+				</div>
+
 console.log(polls.score)
 
 const pollpage = (
+
       <div className="container">
 		<div className="row">
 			<div className="col-sm pollpage-item">
@@ -79,6 +135,7 @@ const pollpage = (
                                   Result
                    </Link>
 				</div>
+
             </div>
             
 				<div className="col-sm">
@@ -92,14 +149,15 @@ const pollpage = (
 					/>
 				</div>
       */}
-			
+			</div>
 		</div>
-	  </div>
 	);
 
-	return <>
-	{pollpage}
-
-	</>;
+	return (
+		<>
+			<Header />
+			{pollpage}
+		</>
+	);
 };
 export default PollPage;

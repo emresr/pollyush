@@ -75,8 +75,14 @@ const PollPage = () => {
 						<h1>Share On Dis </h1>
 					</div>
 				</div>
+				{/*
+
+						{polls.map(	polls => (
+							<h2>{polls.title}</h2>
+						))}
 
 
+					*/}	
 
 				{/*
             <div className="col-sm ">

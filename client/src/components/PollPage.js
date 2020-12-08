@@ -162,7 +162,6 @@ const pollpage = (
 
 	return (
 		<>
-			<Header />
 			{pollpage}
 		</>
 	);

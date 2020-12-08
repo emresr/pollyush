@@ -23,7 +23,7 @@ return (
   
       <div class="col-sm input">
 
-      <form className=" ">
+      <form className="poll-form ">
         <input
         className="form-control"
         size="50"

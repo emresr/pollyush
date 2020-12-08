@@ -1,4 +1,4 @@
-# Polly
+# Pollyush
 
 Polly is a poll app built with React.
 
@@ -29,7 +29,7 @@ Polly is a poll app built with React.
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ cd dillinger
+$ cd 
 $ npm install -d
 $ node app
 ```

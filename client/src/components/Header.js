@@ -4,7 +4,7 @@ const Header = () => {
 	return (
 		<div className="header">
 			<h1 className="text-center mt-5">
-				<b>Polly</b>
+				<b>Pollyush</b>
 			</h1>
 			<h4 className="text-center mb-4">
 				<i>A poll app built with React </i>

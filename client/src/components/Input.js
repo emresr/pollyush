@@ -23,8 +23,9 @@ return (
   
       <div class="col-sm input">
 
-      <form className="form-style-6 ">
+      <form className=" ">
         <input
+        className="form-control"
         size="50"
           type="text"
           value={title}
@@ -32,6 +33,8 @@ return (
           placeholder="Title"
         />
         <input
+        className="form-control"
+
           type="text"
           value={option}
           onChange={e => setOption(e.target.value)}

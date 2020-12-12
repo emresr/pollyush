@@ -1,26 +1,22 @@
-import React, {} from "react"
-import "./App.css"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import React from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import "./App.css";
 
-import Mainpage from "./components/Mainpage"
-import PollPage from "./components/PollPage"
-import Result from "./components/Result"
-
-import Header from "./components/Header"
+import aaInput from "./components/aaInput";
+import aaList from "./components/aaList";
 
 function App() {
-	return (
-		<>
-			<Header/>
-			<Router>
-				<Switch>
-					<Route exact path="/" component={Mainpage} />
-					<Route exact path="/pollpage/:id" component={PollPage} />
-				    <Route exact path="/result/:id" component={Result} />
-
-				</Switch>
-			</Router>
-		</>
-	)
+  return (
+    <div>
+      <div className="container mt-3">
+        <h2>Popells</h2>
+        <Switch>
+          <Route exact path={["/", "/polls"]} component={aaList} />
+          <Route exact path="/addpoll" component={aaInput} />
+        </Switch>
+      </div>
+    </div>
+  );
 }
-export default App
+
+export default App;

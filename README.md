@@ -7,11 +7,6 @@ Polly is a poll app built with React.
   - Share
   - Analyze with charts
 
-# New Features!
-
-  - 
-  - 
-
 
 
 ### Tech
@@ -40,3 +35,11 @@ For production environments...
 $ npm install --production
 $ NODE_ENV=production node app
 ```
+
+
+
+# In the Future
+
+  - Countdown
+  - Add Image to Poll
+  - Add Deadline

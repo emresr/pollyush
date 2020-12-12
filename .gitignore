@@ -25,3 +25,5 @@ yarn-error.log*
 
 
 /api/dbconn.js
+
+/client/src/firebase.js

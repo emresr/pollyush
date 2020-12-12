@@ -1,5 +1,5 @@
 {
-  "name": "Pollyush",
+  "name": "Popells",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "homepage": ".",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "firebase": "^8.2.0",
     "pg": "^8.4.2"
   }
 }

@@ -11,7 +11,6 @@ function App() {
       <div className="container mt-3">
         <h2>Popells</h2>
         <Switch>
-          <Route exact path={["/", "/polls"]} component={aaList} />
           <Route exact path="/addpoll" component={aaInput} />
         </Switch>
       </div>

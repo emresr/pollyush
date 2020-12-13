@@ -20,7 +20,7 @@ const AaList = () => {
   
                 key={index}
               >
-                {poll.val().title}
+                {poll.val().title}-
                 {index}
               </li>
             ))}

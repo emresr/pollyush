@@ -8,6 +8,7 @@ import { PieChart } from "react-minimal-pie-chart";
 const PollPage = () => {
 	const [polls, setPolls] = useState([]);
 
+
 	const [count, setCount] = useState();
 	const id = useParams();
 

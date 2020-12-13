@@ -9,6 +9,7 @@ const pollsItem = {
     title:"",
     option:""
 }
+
 const [polls,setPolls] = useState(pollsItem)
 
  const handleInput = e => {

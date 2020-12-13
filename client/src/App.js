@@ -1,19 +1,26 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter,Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
-import aaInput from "./components/aaInput";
-import aaList from "./components/aaList";
+import AaInput from "./components/AaInput";
+import AaList from "./components/AaList";
+
 
 function App() {
   return (
     <div>
       <div className="container mt-3">
         <h2>Popells</h2>
+            </div>
+      <BrowserRouter>
         <Switch>
-          <Route exact path="/addpoll" component={aaInput} />
+          <Route exact path="/addpoll" component={AaInput} />
+          <Route exact path="/list" component={AaList} />
+
         </Switch>
-      </div>
+      </BrowserRouter>
+
+
     </div>
   );
 }

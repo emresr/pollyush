@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import pollService  from "../services/pollService";
 
 
-const aaInput = () => {
+
+const AaInput = () => {
 
 const pollsItem = {
     title:"",
@@ -10,9 +11,9 @@ const pollsItem = {
 }
 const [polls,setPolls] = useState(pollsItem)
 
- const handleInputChange = e => {
+ const handleInput = e => {
     const { name, value } = e.target;
-    setPolls({ ...poll, [name]: value });
+    setPolls({ ...polls, [name]: value });
   };
 
 const save = () => {
@@ -36,4 +37,4 @@ const save = () => {
  }
 
 
-export default aaInput;
+export default AaInput;

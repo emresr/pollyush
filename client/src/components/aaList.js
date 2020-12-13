@@ -6,29 +6,30 @@ import { useList } from "react-firebase-hooks/database";
 
 
 const AaList = () => {
+  const [polls] = useList(pollService.getAll());
 
-const [polls,loading,error] = useList(pollService)
-
-
-  return(
-    <>
+  return (
+    <div className="list row">
+      <div className="col-md-6">
+        <h4>Polls List</h4>
         <ul className="list-group">
           {            polls &&
             polls.map((poll, index) => (
               <li
-                className={"list-group-item"}
-          //      onClick={() => setActiveTutorial(poll, index)}
+                className={"list-group-item "}
+  
                 key={index}
               >
                 {poll.val().title}
-                {/* poll.title */}
+                {index}
               </li>
             ))}
         </ul>
 
-</>
-    )
- }
-
+      </div>
+      
+    </div>
+  );
+};
 
 export default AaList;

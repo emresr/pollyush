@@ -6,6 +6,10 @@ const getAll = () => {
   return db;
 };
 
+const getOne = (index) => {
+  return db.child(index);
+};
+
 const create = (data) => {
   return db.push(data);
 };
@@ -24,6 +28,7 @@ const removeAll = () => {
 
 export default {
   getAll,
+  getOne,
   create,
   update,
   remove,

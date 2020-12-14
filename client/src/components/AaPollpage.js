@@ -9,7 +9,8 @@ import { useParams, Link } from "react-router-dom";
 const AaPollpage = () => {
   const id = useParams();
 console.log(id.id)
-  const [polls] = useList(pollService.getOne(id.id));
+const key = "-MOQwSSFJIISpWfgKZZa"
+  const [polls] = useList(pollService.getOne(key));
 console.log(polls)
   return (
     <div className="list row">

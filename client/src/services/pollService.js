@@ -6,8 +6,8 @@ const getAll = () => {
   return db;
 };
 
-const getOne = (index) => {
-  return db.child(index);
+const getOne = (key) => {
+  return db.child(key);
 };
 
 const create = (data) => {

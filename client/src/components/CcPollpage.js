@@ -8,24 +8,24 @@ import { useList,useListVals } from "react-firebase-hooks/database";
 const CcPollpage = () => {
   const [polls] = useListVals(pollService.getAll());
 console.log(polls)
-
+  const k = polls[0]
+  console.log(k)
   return (
     <div className="list row">
       <div className="col-md-6">
         <h4>Polls List</h4>
         <ul className="list-group">
           {            polls &&
-            polls.map((poll, index) => (
               <li
                 className={"list-group-item "}
   
-                key={index}
               >
-                {poll.title}-
-                {index}
+                {polls.title}-
               </li>
-            ))}
-        </ul>
+            }
+                            </ul>   
+
+
 
       </div>
       

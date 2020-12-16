@@ -10,17 +10,16 @@ const pollsItem = {
     title:"",
     option:[],
 }
-const [option,setOption] = useState("")
 
 const [polls,setPolls] = useState(pollsItem)
 
-const handleOption = (e,index) => {
+/* const handleOption = (e,index) => {
 
 	options[index] = e.target.value
 
 	setState({options: options})
 }
-
+*/
  const handleInput = e => {
     const { name, value } = e.target;
     setPolls({ ...polls, [name]: value });
@@ -44,15 +43,13 @@ const save = () => {
 	return(
 		<>
 <input type="text" className="" value={polls.title} name="title" onChange={handleInput} />
- 
-                   <input onChange={(e)=>this.handleChange(e)} value={option} />
-                   <input onChange={(e)=>this.handleChange(e)} value={option} />
+ <input type="text" className="" value={polls.option} name="option" onChange={handleInput} />
 
 
-         <button > Add Option </button>
 
 
-<button onClick={save}/>
+
+<button onClick={save}> Add </button>
 
 </>
 		)

@@ -20,19 +20,7 @@ class Input2 extends Component {
       this.setState({options:this.state.options})
    }
 
-    handleRemove(index){
-      this.state.options.splice(index,1)
 
-      console.log(this.state.options,'$$$$')
-
-      //update state
-
-      this.setState({options:this.state.options})
-    }
-
-   handleSubmit(e){
-    console.log(this.state,"ew")
-   }
 
 render() { 
      return (

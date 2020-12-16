@@ -12,9 +12,7 @@ Polly is a poll app built with React.
 ### Tech
 
 * [ReactJS] - HTML enhanced for web apps!
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-
+* 
 
 
 ### Installation
@@ -31,10 +29,8 @@ $ node app
 
 For production environments...
 
-```sh
-$ npm install --production
-$ NODE_ENV=production node app
-```
+ggggg`gggg
+gg
 
 
 
@@ -43,3 +39,7 @@ $ NODE_ENV=production node app
   - Countdown
   - Add Image to Poll
   - Add Deadline
+  - Dark Theme
+  -Random URL
+  -Private Poll
+  -Double,Triple points

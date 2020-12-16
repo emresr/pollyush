@@ -8,7 +8,6 @@ import { useList,useListVals } from "react-firebase-hooks/database";
 const AaList = () => {
   const [polls] = useListVals(pollService.getAll());
 console.log(polls)
-console.log(polls.length)
   return (
     <div className="list row">
       <div className="col-md-6">
@@ -26,6 +25,20 @@ console.log(polls.length)
               </li>
             ))}
         </ul>
+
+                    {polls.map((poll) => ( 
+              poll.options.map((options) => (
+
+                <div>
+                  <input
+                    class="pollpage-check"
+                    type="checkbox"
+                  />
+                  <label class="">{options.option1.option_title}</label>
+                </div>
+              ))
+            ))}
+
 
       </div>
       

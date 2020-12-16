@@ -8,10 +8,18 @@ const AaInput = () => {
 
 const pollsItem = {
     title:"",
-    option:"",
+    option:[],
 }
+const [option,setOption] = useState("")
 
 const [polls,setPolls] = useState(pollsItem)
+
+const handleOption = (e,index) => {
+
+	options[index] = e.target.value
+
+	setState({options: options})
+}
 
  const handleInput = e => {
     const { name, value } = e.target;
@@ -21,6 +29,8 @@ const [polls,setPolls] = useState(pollsItem)
 const [len] = useListVals(pollService.getAll());
 
 const save = () => {
+   
+
 	var data = {
 		id : len.length + 1,
 		title : polls.title,
@@ -34,7 +44,13 @@ const save = () => {
 	return(
 		<>
 <input type="text" className="" value={polls.title} name="title" onChange={handleInput} />
-<input type="text" className="" value={polls.option} name="option" onChange={handleInput}/>
+ 
+                   <input onChange={(e)=>this.handleChange(e)} value={option} />
+                   <input onChange={(e)=>this.handleChange(e)} value={option} />
+
+
+         <button > Add Option </button>
+
 
 <button onClick={save}/>
 

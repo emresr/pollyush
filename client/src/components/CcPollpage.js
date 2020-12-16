@@ -5,9 +5,10 @@ import { useList,useListVals } from "react-firebase-hooks/database";
 
 
 
-const AaList = () => {
+const CcPollpage = () => {
   const [polls] = useListVals(pollService.getAll());
-  
+console.log(polls)
+console.log(polls.length)
   return (
     <div className="list row">
       <div className="col-md-6">
@@ -20,7 +21,7 @@ const AaList = () => {
   
                 key={index}
               >
-                {poll[1].title}-
+                {poll.title}-
                 {index}
               </li>
             ))}
@@ -32,4 +33,4 @@ const AaList = () => {
   );
 };
 
-export default AaList;
+export default CcPollpage;

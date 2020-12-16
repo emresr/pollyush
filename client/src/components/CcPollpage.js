@@ -8,7 +8,7 @@ import { useList,useListVals } from "react-firebase-hooks/database";
 const CcPollpage = () => {
   const [polls] = useListVals(pollService.getAll());
 console.log(polls)
-console.log(polls.length)
+
   return (
     <div className="list row">
       <div className="col-md-6">

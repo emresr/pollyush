@@ -1,6 +1,6 @@
 import React, { useState,useEffects } from "react";
 import pollService  from "../services/pollService";
-import { useList } from "react-firebase-hooks/database";
+import { useList,useListVals } from "react-firebase-hooks/database";
 import { useParams, Link } from "react-router-dom";
 
 
@@ -8,10 +8,12 @@ import { useParams, Link } from "react-router-dom";
 
 const AaPollpage = () => {
   const id = useParams();
-console.log(id.id)
-const key = "-MOQwSSFJIISpWfgKZZa"
-  const [polls] = useList(pollService.getOne(key));
+  const key ="-MOfHcPCxDS44MHYoZJU"
+  const [polls] = useList(pollService.getOne());
+  const [os] = useList(pollService.One(1))
+  console.log(os)
 console.log(polls)
+
   return (
     <div className="list row">
       <div className="col-md-6">
@@ -21,7 +23,6 @@ console.log(polls)
             polls.map((poll, index) => (
               <li
                 className={"list-group-item "}
-  
                 key={index}
               >
                 {poll.val().title}-

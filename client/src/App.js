@@ -16,7 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/addpoll" component={AaInput} />
           <Route exact path="/list" component={AaList} />
-          <Route exact path="/:id" component={AaPollpage} />
+          <Route exact path="/pollpage" component={AaPollpage} />
 
         </Switch>
       </BrowserRouter>

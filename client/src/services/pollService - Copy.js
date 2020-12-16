@@ -1,18 +1,22 @@
 import firebase from "../firebase";
 
 const db = firebase.ref("/polls");
+const path = '/polls'+1
 
 const getAll = () => {
   return db;
 };
 
-const getOne = () => {
-  const key = ""
-  return db.child(key);
+const getOne = (index) => {
+    const path = '/polls'+ index
+
+  return firebase.ref(path);
 };
 
-const create = (data) => {
-  return db.push(data);
+const create = (index,data) => {
+  const path = '/polls/'+ index
+
+  return firebase.ref(path).push(data);
 };
 
 const update = (key, data) => {
@@ -27,12 +31,6 @@ const removeAll = () => {
   return db.remove();
 };
 
-const One = (id) => {
-
-  firebase().ref('/polls').orderByChild("id").equalTo(id).on('value', function (snapshot) {
-       //snapshot would have list of NODES that satisfies the condition
-}
-
 export default {
   getAll,
   getOne,
@@ -40,5 +38,4 @@ export default {
   update,
   remove,
   removeAll,
-  One,
 };

@@ -6,8 +6,9 @@ import { useList,useListVals } from "react-firebase-hooks/database";
 
 
 const AaList = () => {
-  const [polls] = useList(pollService.getAll());
+  const [polls] = useListVals(pollService.getAll());
 console.log(polls)
+console.log(polls.length)
   return (
     <div className="list row">
       <div className="col-md-6">
@@ -20,7 +21,7 @@ console.log(polls)
   
                 key={index}
               >
-                {poll.val().title}-
+                {poll.title}-
                 {index}
               </li>
             ))}

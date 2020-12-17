@@ -3,27 +3,28 @@ import pollService  from "../services/pollService";
 import { useList,useListVals } from "react-firebase-hooks/database";
 
 
-
-
 const CcPollpage = () => {
-  const [polls] = useListVals(pollService.getAll());
+
+
+  const [polls] = useListVals(pollService.getOne());
 console.log(polls)
-  const k = polls[0]
-  console.log(k)
   return (
     <div className="list row">
       <div className="col-md-6">
         <h4>Polls List</h4>
         <ul className="list-group">
-          {            polls &&
-              <li
+
+                          <li
                 className={"list-group-item "}
   
               >
-                {polls.title}-
+              {  polls &&
+            polls[2].map((poll) => (
+                <h1>  {poll.q} </h1>
+                        ))}
               </li>
-            }
                             </ul>   
+
 
 
 

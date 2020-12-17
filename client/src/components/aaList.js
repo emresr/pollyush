@@ -26,18 +26,6 @@ console.log(polls)
             ))}
         </ul>
 
-                    {polls.map((poll) => ( 
-              poll.options.map((options) => (
-
-                <div>
-                  <input
-                    class="pollpage-check"
-                    type="checkbox"
-                  />
-                  <label class="">{options.option1.option_title}</label>
-                </div>
-              ))
-            ))}
 
 
       </div>

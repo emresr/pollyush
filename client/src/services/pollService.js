@@ -1,13 +1,13 @@
 import firebase from "../firebase";
 
-const db = firebase.ref("/polls");
+const db = firebase.ref("/polls/");
 
 const getAll = () => {
   return db;
 };
 
 const getOne = () => {
-  const key = ""
+  const key = "-MOmLgm9Ceky4DqUl2bj"
   return db.child(key);
 };
 

@@ -1,32 +1,19 @@
 import React, { useState, useEffect} from "react"
 import {Link,useParams} from "react-router-dom"
+import pollService  from "../services/pollService";
+import { useList,useListVals } from "react-firebase-hooks/database";
+
 
 const List = () => {
-  const [polls, setPolls] = useState([])
-  const id = useParams()
+  const [polls] = useListVals(pollService.getAll());
 
-  const getPolls = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/polls")
-      const jsonData = await response.json()
-
-      setPolls(jsonData)
-    } catch (err) {
-
-      console.error(err.message)
-    }
-  }
-
-  useEffect(() => {
-    getPolls()
-  }, [])
-  
+  console.log(polls)
   return (
 <div class="col-sm">
      <h6 className="list-title"> Latest Polls</h6>
 
      <div  className="list-item">
-                      <Link className="btn list-link" to={`/pollpage/1`}>
+                      <Link className="btn list-link" to={`/poll/-MOmLgm9Ceky4DqUl2bj`}>
 
        <h1 className="item-title">Title 1111 </h1>
                          </Link>
@@ -36,14 +23,13 @@ const List = () => {
 
 
 
-    {polls.map(polls => (
-    <div key={polls.poll_id} className="list-item">
-                 <Link className="btn list-link" to={`/pollpage/${polls.poll_id} `}>
-                                        <h1>{polls.title} </h1>
+          {            polls &&
+            polls.map((poll, index) => (
+                <div key={polls.poll_id} className="list-item">
+                 <Link className="btn list-link" to={`/poll/${poll.key} `}>
+                                        <h1>{poll.title} </h1>
                    </Link>
-      
-      <h3>{polls.option} </h3> 
-    </div>
+          </div>
 
     ))}
     </div>

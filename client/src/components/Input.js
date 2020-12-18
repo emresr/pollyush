@@ -1,23 +1,10 @@
 import React, { useState} from "react"
-import Pollapi from "./api/Pollapi"
 
 const Input = () => {
   const [title, setTitle] = useState("")
   const [option, setOption] = useState([])
   
 
-const handleSubmit =  async (e) => {
-   e.preventDefault()
-   try {
-     const response = await  Pollapi.post("/",{ 
-        title,
-        option,
-     })   
-     console.log(response)
-   } catch (err) {
-
-   }
-}
 
 return ( 
   
@@ -41,7 +28,7 @@ return (
           placeholder="Option"
         />
 
-        <button onClick={handleSubmit} type="submit" >
+        <button  type="submit" >
          Mf
         </button>
       </form>

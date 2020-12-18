@@ -6,8 +6,7 @@ const getAll = () => {
   return db;
 };
 
-const getOne = () => {
-  const key = "-MOmLgm9Ceky4DqUl2bj"
+const getOne = (key) => {
   return db.child(key);
 };
 

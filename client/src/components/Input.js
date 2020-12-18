@@ -1,9 +1,36 @@
-import React, { useState} from "react"
+import React, { useState } from "react";
+import pollService  from "../services/pollService";
+import { useList,useListVals } from "react-firebase-hooks/database";
+
 
 const Input = () => {
-  const [title, setTitle] = useState("")
-  const [option, setOption] = useState([])
-  
+  const pollsItem = {
+    title:"",
+    option:[],
+}
+
+const [polls,setPolls] = useState(pollsItem)
+
+ const handleInput = e => {
+    const { name, value } = e.target;
+    setPolls({ ...polls, [name]: value });
+  };
+
+const [len] = useListVals(pollService.getAll());
+
+const save = () => {
+   
+
+  var data = {
+    id : len.length + 1,
+    title : polls.title,
+    option : polls.option,
+
+  }
+    pollService.create(data) 
+
+}
+
 
 
 return ( 
@@ -15,20 +42,22 @@ return (
         className="form-control"
         size="50"
           type="text"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
+          value={polls.title}
+          name="title"
+          onChange={handleInput}
           placeholder="Title"
         />
         <input
         className="form-control"
 
           type="text"
-          value={option}
-          onChange={e => setOption(e.target.value)}
+          value={polls.option}
+          name="title"
+          onChange={handleInput}
           placeholder="Option"
         />
 
-        <button  type="submit" >
+        <button  onClick={save}>
          Mf
         </button>
       </form>

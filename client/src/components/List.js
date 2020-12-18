@@ -13,7 +13,7 @@ const List = () => {
      <h6 className="list-title"> Latest Polls</h6>
 
      <div  className="list-item">
-                      <Link className="btn list-link" to={`/poll/-MOmLgm9Ceky4DqUl2bj`}>
+                      <Link className="btn list-link" to={`/poll/-MOffQFTdecvdlzCctQt`}>
 
        <h1 className="item-title">Title 1111 </h1>
                          </Link>

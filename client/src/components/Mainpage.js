@@ -8,9 +8,10 @@ import Header from "./Header"
 const Mainpage = () => {
 	return (
 		<>
+						       <Header/>
+
 			<div className="container">
 				<div className="row">
-				       <Header/>
 					<Input />
 					<List />
 				</div>

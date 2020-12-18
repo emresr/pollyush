@@ -4,7 +4,7 @@ import "./App.css";
 
 import AaInput from "./components/AaInput";
 import List from "./components/List";
-import AaPollpage from "./components/AaPollpage";
+import Pollpage from "./components/Pollpage";
 import CcPollpage from "./components/CcPollpage";
 
 import Mainpage from "./components/Mainpage"
@@ -14,6 +14,7 @@ function App() {
   return (
     <div>
  
+ 
 
       <div className="container mt-3">
             </div>
@@ -22,7 +23,7 @@ function App() {
                   <Route exact path="/" component={Mainpage} />
           <Route exact path="/add" component={AaInput} />
         //  <Route exact path="/list" component={List} />
-          <Route exact path="/poll/:id" component={CcPollpage} />
+          <Route exact path="/poll/:id" component={Pollpage} />
 
         </Switch>
       </BrowserRouter>

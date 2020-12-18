@@ -6,9 +6,16 @@ const getAll = () => {
   return db;
 };
 
-const getOne = (key) => {
-  return db.child(key);
+const key = "-MOffQFTdecvdlzCctQt"
+
+const getPollTitle = (key) => {
+  return db.child(key).child("title");
 };
+
+const getPollOptions = (key) => {
+ return db.child(key).child("options")
+  
+}
 
 const create = (data) => {
   return db.push(data);
@@ -29,9 +36,10 @@ const removeAll = () => {
 
 export default {
   getAll,
-  getOne,
   create,
   update,
   remove,
   removeAll,
+  getPollOptions,
+  getPollTitle,
 };

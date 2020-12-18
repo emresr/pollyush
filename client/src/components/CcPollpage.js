@@ -7,31 +7,28 @@ import Header from "./Header"
 const CcPollpage = () => {
 
 const url = useParams();
-console.log(url)
 
-  const [polls] = useListVals(pollService.getOne(url.id));
-console.log(polls)
+
+  const [options] = useListVals(pollService.getPollOptions(url.id));
+console.log(options[0])
+
   return (
     <>
            <Header/>
     <div className="list row">
       <div className="col-md-6">
-        <h4> {polls[1]}</h4>
+        <h4> {}</h4>
         <ul className="list-group">
 
                           <li
                 className={"list-group-item "}
   
               >
-                {polls[1]}
+                {}
+
                             
               </li>
-                            </ul>   
-
-
-
-
-      </div>
+                            </ul>         </div>
       
     </div>
   </>

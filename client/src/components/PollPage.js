@@ -9,14 +9,15 @@ import Header from "./Header"
 const Pollpage = () => {
 
 
+
 const url = useParams();
 
-
-
-
   const [options] = useListVals(pollService.getPollOptions(url.id));
-console.log(options[0])
+console.log(options)
 
+let voteId ="";
+
+if (voteId !== null) {console.log("lmao")}
 
 
 	const pollpage = (
@@ -27,11 +28,18 @@ console.log(options[0])
 				<div className="col-sm pollpage-item">
 					<div className="pollpage-title">
 							<h2>{}</h2>			
-									<input
+
+									          {            options &&
+                                       options.map((option, index) => (
+                             <div key={option.option_id} >
+                                    									<input
 										class="pollpage-check"
 										type="checkbox"
+										checked={voteId === option.option_id}
 									/>
-									<label class="">{options[0]}</label>
+									<label class="">{option.option_title}</label>
+                            </div>
+									))}
 		
      <button> Vote </button>
 

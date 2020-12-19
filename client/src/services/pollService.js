@@ -7,10 +7,26 @@ const getAll = () => {
 };
 
 const getKey = () => {
-  return firebase.ref("/");
+	return firebase.ref("/")
+} // ?
+
+//list
+const getWinnerOption = () => {
+	return db.child(key).child("options").
+}
+
+////optionları tek satırda scoreları tek satırda tut?
+
+// Input
+
+const create = (data) => {
+  return db.push(data);
 };
 
-const key = "-MOffQFTdecvdlzCctQt";
+const createOptions = (key, dataOption) => {
+  return db.child(key).child("options").push(dataOption);
+};
+
 
 //Pollpage
 const getPollTitle = (key) => {
@@ -21,13 +37,6 @@ const getPollOptions = (key) => {
   return db.child(key).child("options");
 };
 
-const create = (data) => {
-  return db.push(data);
-};
-
-const createOptions = (key, dataOption) => {
-  return db.child(key).child("options").push(dataOption);
-};
 
 const update = (key, data) => {
   return db.child(key).update(data);

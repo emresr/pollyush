@@ -11,8 +11,8 @@ const getKey = () => {
 } // ?
 
 //list
-const getWinnerOption = () => {
-	return db.child(key).child("options").
+const getWinnerOption = (key) => {
+	return db.child(key).child("options")
 }
 
 ////optionları tek satırda scoreları tek satırda tut?
@@ -37,6 +37,11 @@ const getPollOptions = (key) => {
   return db.child(key).child("options");
 };
 
+const getPollScores = (key) => {
+  return db.child(key).child("scores");
+};
+
+
 
 const update = (key, data) => {
   return db.child(key).update(data);
@@ -58,4 +63,5 @@ export default {
   removeAll,
   getPollOptions,
   getPollTitle,
+  getPollScores,
 };

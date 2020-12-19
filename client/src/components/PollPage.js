@@ -12,15 +12,25 @@ const Pollpage = () => {
   const [options] = useListVals(pollService.getPollOptions(url.id));
   console.log(options);
 
-  let voteId = "";
+const [voteid,setVoteid] = useState("");
 
-  if (voteId !== null) {
+
+
+
+  const handleCheckbox = e => {
+      const checked = e.target.checked
+      if(checked) {
+        console.log("u did")
+      }
+      setVoteid({voteid : e.target.name})
+      console.log(voteid)
+  };
+
+  const handleVote = () => {
+                if (voteid !== null) {
     console.log("lmao");
   }
-
-  const handleCheckbox = () => {
-    // id alınıp vote basılacak
-  };
+  }
 
   const pollpage = (
     <div>
@@ -37,14 +47,14 @@ const Pollpage = () => {
                     <input
                       class="pollpage-check"
                       type="checkbox"
-                      checked={voteId === option.option_id}
+                      checked={voteid === option.option_id}
                       onChange={handleCheckbox}
                     />
                     <label class="">{option.option_title}</label>
                   </div>
                 ))}
 
-              <button> Vote </button>
+              <button onClick={handleVote}> Vote </button>
 
               <Link className="btn result-button" to={`/result/${url.id}`}>
                 Result

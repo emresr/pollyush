@@ -6,19 +6,22 @@ const getAll = () => {
   return db;
 };
 
-const key = "-MOffQFTdecvdlzCctQt"
+const key = "-MOffQFTdecvdlzCctQt";
 
 const getPollTitle = (key) => {
   return db.child(key).child("title");
 };
 
 const getPollOptions = (key) => {
- return db.child(key).child("options")
-  
-}
+  return db.child(key).child("options");
+};
 
 const create = (data) => {
   return db.push(data);
+};
+
+const createOptions = (key, dataOption) => {
+  return db.child(key).child("options").push(dataOption);
 };
 
 const update = (key, data) => {
@@ -32,7 +35,6 @@ const remove = (key) => {
 const removeAll = () => {
   return db.remove();
 };
-
 
 export default {
   getAll,

@@ -36,6 +36,7 @@ gg
 
 # In the Future
 
+  - Owners can add option
   - Countdown
   - Add Image to Poll
   - Add Deadline

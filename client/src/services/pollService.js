@@ -6,8 +6,13 @@ const getAll = () => {
   return db;
 };
 
+const getKey = () => {
+  return firebase.ref("/");
+};
+
 const key = "-MOffQFTdecvdlzCctQt";
 
+//Pollpage
 const getPollTitle = (key) => {
   return db.child(key).child("title");
 };

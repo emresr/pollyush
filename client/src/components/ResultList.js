@@ -6,8 +6,6 @@ import { PieChart } from "react-minimal-pie-chart";
 import pollService from "../services/pollService";
 import { useList, useListVals } from "react-firebase-hooks/database";
 
-import Header from "./Header";
-
 const ResultList = () => {
   const url = useParams();
 
@@ -16,7 +14,6 @@ const ResultList = () => {
 
   const pollpage = (
     <div>
-      <Header />
       <div className="container">
         <div className="row">
           <div className="col-sm pollpage-item">

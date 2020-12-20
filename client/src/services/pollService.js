@@ -7,13 +7,13 @@ const getAll = () => {
 };
 
 const getKey = () => {
-	return firebase.ref("/")
-} // ?
+  return firebase.ref("/");
+}; // ?
 
 //list
 const getWinnerOption = (key) => {
-	return db.child(key).child("options")
-}
+  return db.child(key).child("options");
+};
 
 ////optionları tek satırda scoreları tek satırda tut?
 
@@ -27,7 +27,6 @@ const createOptions = (key, dataOption) => {
   return db.child(key).child("options").push(dataOption);
 };
 
-
 //Pollpage
 const getPollTitle = (key) => {
   return db.child(key).child("title");
@@ -40,8 +39,19 @@ const getPollOptions = (key) => {
 const getPollScores = (key) => {
   return db.child(key).child("scores");
 };
+//Pollpage voting
+const getlastScore = (key) => {
+  return db.child(key).child("options").child("option1").child("option_score");
+};
+const voteg = (key, voteid, newScore) => {
+  //db.child(key).child("options").child("option1").child("option_score")
 
-
+  return db
+    .child(key)
+    .child("options")
+    .child("option" + voteid)
+    .update({ option_score: newScore });
+};
 
 const update = (key, data) => {
   return db.child(key).update(data);
@@ -64,4 +74,6 @@ export default {
   getPollOptions,
   getPollTitle,
   getPollScores,
+  voteg,
+  getlastScore,
 };

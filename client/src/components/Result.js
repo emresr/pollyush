@@ -13,6 +13,7 @@ const Result = () => {
       <div className="container">
         <div className="row">
           <ResultList />
+          <Chart />
         </div>
       </div>
     </>

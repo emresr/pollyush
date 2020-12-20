@@ -10,27 +10,26 @@ const Pollpage = () => {
   const url = useParams();
 
   const [options] = useListVals(pollService.getPollOptions(url.id));
-  console.log(options);
+  // console.log(options);
 
-const [voteid,setVoteid] = useState("");
+  const [voted, setVoted] = useState("");
 
+  const [voteid, setVoteid] = useState("");
+  const [newScore, setNewScore] = useState("");
 
+  const vote = () => {
+    console.log(voted.option_id);
 
+    setVoteid(voted.option_id);
+    setNewScore(voted.option_score);
 
-  const handleCheckbox = e => {
-      const checked = e.target.checked
-      if(checked) {
-        console.log("u did")
-      }
-      setVoteid({voteid : e.target.name})
-      console.log(voteid)
+    console.log(voteid);
+    console.log(newScore);
+
+    console.log(url.id);
+    console.log("option" + voteid);
+    pollService.voteg(url.id, voteid, newScore + 1);
   };
-
-  const handleVote = () => {
-                if (voteid !== null) {
-    console.log("lmao");
-  }
-  }
 
   const pollpage = (
     <div>
@@ -47,14 +46,13 @@ const [voteid,setVoteid] = useState("");
                     <input
                       class="pollpage-check"
                       type="checkbox"
-                      checked={voteid === option.option_id}
-                      onChange={handleCheckbox}
+                      onChange={() => setVoted(option)}
                     />
                     <label class="">{option.option_title}</label>
                   </div>
                 ))}
 
-              <button onClick={handleVote}> Vote </button>
+              <button onClick={vote}> Vote </button>
 
               <Link className="btn result-button" to={`/result/${url.id}`}>
                 Result

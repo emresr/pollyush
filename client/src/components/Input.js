@@ -5,9 +5,9 @@ import { useList, useListVals } from "react-firebase-hooks/database";
 const Input = () => {
   const pollsItem = {
     title: "",
-    option: [],
+    options: "",
   };
-
+  //input statics
   const [polls, setPolls] = useState(pollsItem);
 
   const handleInput = (e) => {
@@ -15,23 +15,36 @@ const Input = () => {
     setPolls({ ...polls, [name]: value });
   };
 
+  //options dynamic
+  const blankOption = { option_title: "", option_score: 0 };
+  const [optionState, setOptionState] = useState([{ ...blankOption }]);
+
+  const addOption = () => {
+    setOptionState([...optionState, { ...blankOption }]);
+  };
+
+  const handleOptionChange = (e) => {
+    const updatedOptions = [...optionState];
+    updatedOptions[e.target.dataset.idx][e.target.className] = e.target.value;
+    setOptionState(updatedOptions);
+    console.log(updatedOptions);
+  };
+
+  const pushConsole = () => {
+    console.log(optionState);
+  };
+
+  // push new one
   const [len] = useListVals(pollService.getAll());
 
   const save = () => {
     var data = {
       id: len.length + 1,
       title: polls.title,
-      option: polls.option,
+      option: "polls.option",
+      options: optionState,
     };
     pollService.create(data);
-
-    var dataOption = {
-      option: polls.option,
-    };
-    const key = "-MOffQFTdecvdlzCctQt";
-    pollService.createOptions(key, dataOption);
-
-    console.log(pollService.create(data).toString());
     //  history.push('/thank-you')  https://gist.github.com/elitan/5e4cab413dc201e0598ee05287ee4338
   };
 
@@ -56,7 +69,32 @@ const Input = () => {
           placeholder="Option"
         />
 
-        <button onClick={save}>Mf</button>
+        <input type="button" value="Add New Option" onClick={addOption} />
+        {optionState.map((val, idx) => {
+          const optionId = `option_title-${idx}`;
+          return (
+            <div key={`option-${idx}`}>
+              <label htmlFor={optionId}>{`Option #${idx + 1}`}</label>
+              <input
+                type="text"
+                name={optionId}
+                data-idx={idx}
+                id={optionId}
+                className="option_title"
+                value={optionState[idx].option_title}
+                onChange={handleOptionChange}
+              />
+            </div>
+          );
+        })}
+
+        <input type="button" value="Submit" onClick={pushConsole} />
+        <input
+          onClick={save}
+          type="button"
+          className="btn-success"
+          value="Push"
+        />
       </form>
     </div>
   );

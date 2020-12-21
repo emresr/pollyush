@@ -37,6 +37,7 @@ gg
 # In the Future
 
   - Owners can add option
+  -IP chekcer
   - Countdown
   - Add Image to Poll
   - Add Deadline

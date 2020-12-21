@@ -49,7 +49,7 @@ const voteg = (key, voteid, newScore) => {
   return db
     .child(key)
     .child("options")
-    .child("option" + voteid)
+    .child(voteid)
     .update({ option_score: newScore });
 };
 

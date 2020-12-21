@@ -14,21 +14,10 @@ const Pollpage = () => {
 
   const [voted, setVoted] = useState("");
 
-  const [voteid, setVoteid] = useState("");
-  const [newScore, setNewScore] = useState("");
-
-  const vote = () => {
+  const votePush = () => {
     console.log(voted.option_id);
 
-    setVoteid(voted.option_id);
-    setNewScore(voted.option_score);
-
-    console.log(voteid);
-    console.log(newScore);
-
-    console.log(url.id);
-    console.log("option" + voteid);
-    pollService.voteg(url.id, voteid, newScore + 1);
+    pollService.voteg(url.id, voted.option_id, voted.option_score + 1);
   };
 
   const pollpage = (
@@ -52,7 +41,7 @@ const Pollpage = () => {
                   </div>
                 ))}
 
-              <button onClick={vote}> Vote </button>
+              <button onClick={votePush}> Vote </button>
 
               <Link className="btn result-button" to={`/result/${url.id}`}>
                 Result

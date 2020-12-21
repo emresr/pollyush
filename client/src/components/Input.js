@@ -16,7 +16,7 @@ const Input = () => {
   };
 
   //options dynamic
-  const blankOption = { option_title: "", option_score: 0 };
+  const blankOption = { option_id: "", option_title: "", option_score: 0 };
   const [optionState, setOptionState] = useState([{ ...blankOption }]);
 
   const addOption = () => {
@@ -34,19 +34,34 @@ const Input = () => {
     console.log(optionState);
   };
 
-  const handleRemove = (idx) => {
+  const handleRemove = (id) => {
     const beforeRemove = [...optionState];
-    beforeRemove.splice(idx, 1);
+    beforeRemove.splice(id, 1);
+    console.log(beforeRemove);
 
     setOptionState(beforeRemove);
-    console.log(beforeRemove);
-    // this.setState({options:this.state.options})
+  };
+
+  const addid = () => {
+    const addID = [...optionState];
+    console.log(addID);
+    for (var i = 0; i < addID.length; i++) {
+      addID[i]["option_id"] = i;
+      console.log(addID[i]);
+    }
   };
 
   // push new one
   const [len] = useListVals(pollService.getAll());
 
   const save = () => {
+    const addID = [...optionState];
+    console.log(addID);
+    for (var i = 0; i < addID.length; i++) {
+      addID[i]["option_id"] = i;
+      setOptionState(addID);
+    }
+
     var data = {
       id: len.length + 1,
       title: polls.title,
@@ -104,6 +119,8 @@ const Input = () => {
         })}
 
         <input type="button" value="Submit" onClick={pushConsole} />
+        <input type="button" value="ID" onClick={addid} />
+
         <input
           onClick={save}
           type="button"

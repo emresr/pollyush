@@ -8,7 +8,6 @@ const Mainpage = () => {
   return (
     <>
       <Header />
-
       <div className="container">
         <div className="row">
           <Input />

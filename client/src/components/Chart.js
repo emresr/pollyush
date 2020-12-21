@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment,useState ,useEffects} from "react";
 import Input from "./Input.js";
 import List from "./List.js";
 
@@ -9,21 +9,31 @@ import { useList, useListVals } from "react-firebase-hooks/database";
 
 import { PieChart } from "react-minimal-pie-chart";
 
+
+
 const Result = () => {
   const url = useParams();
   const [options] = useListVals(pollService.getPollOptions(url.id));
   console.log(options);
-
-  const chartItem = {
+ 
+ const chartItem = {
     title: "",
     value: "",
     color: "#C13C37",
   };
 
-  const [chart, setChart] = useState(chartItem);
+ const [chart,setChart] = useState(chartItem);
 
-  const handleChart = () => {};
-  console.log(chart);
+//one item to chart 
+
+ const handleChart = () => {
+           
+           const goData = () => {
+           console.log(chart)
+       }
+        console.log(chart)
+ }
+ console.log(chart)
 
   const getResults = [
     { title: "One", value: 15, color: "#E38627" },
@@ -34,7 +44,7 @@ const Result = () => {
     <>
       <div className="col-sm chart">
         <PieChart viewBoxSize="[150,150]" data={getResults} />
-        <input type="button" value="getir pls" onClick={handleChart} />
+        <input type="button" value="getir pls" onClick={handleChart}/>
       </div>
     </>
   );

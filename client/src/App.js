@@ -11,7 +11,6 @@ import Mainpage from "./components/Mainpage";
 import Header from "./components/Header";
 import Result from "./components/Result";
 
-import Form from "./components/Form";
 function App() {
   return (
     <div>
@@ -19,8 +18,6 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Mainpage} />
-          <Route exact path="/add" component={AaInput} />
-          // <Route exact path="/form" component={Form} />
           <Route exact path="/poll/:id" component={Pollpage} />
           <Route exact path="/result/:id" component={Result} />
         </Switch>

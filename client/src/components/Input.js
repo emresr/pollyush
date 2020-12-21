@@ -34,6 +34,15 @@ const Input = () => {
     console.log(optionState);
   };
 
+  const handleRemove = (idx) => {
+    const beforeRemove = [...optionState];
+    beforeRemove.splice(idx, 1);
+
+    setOptionState(beforeRemove);
+    console.log(beforeRemove);
+    // this.setState({options:this.state.options})
+  };
+
   // push new one
   const [len] = useListVals(pollService.getAll());
 
@@ -83,6 +92,12 @@ const Input = () => {
                 className="option_title"
                 value={optionState[idx].option_title}
                 onChange={handleOptionChange}
+              />
+              <input
+                className="btn-danger"
+                type="button"
+                value="Remove"
+                onClick={handleRemove}
               />
             </div>
           );

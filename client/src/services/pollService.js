@@ -12,10 +12,8 @@ const getKey = () => {
 
 //list
 const getWinnerOption = (key) => {
-  return db.child(key).child("options");
+  return db.child(key).child("options").orderByChild("option_score");
 };
-
-////optionları tek satırda scoreları tek satırda tut?
 
 // Input
 
@@ -39,13 +37,13 @@ const getPollOptions = (key) => {
 const getPollScores = (key) => {
   return db.child(key).child("scores");
 };
+
 //Pollpage voting
 const getlastScore = (key) => {
   return db.child(key).child("options").child("option1").child("option_score");
 };
-const voteg = (key, voteid, newScore) => {
-  //db.child(key).child("options").child("option1").child("option_score")
 
+const vote = (key, voteid, newScore) => {
   return db
     .child(key)
     .child("options")
@@ -53,6 +51,13 @@ const voteg = (key, voteid, newScore) => {
     .update({ option_score: newScore });
 };
 
+//Result
+
+const getPollResult = (key) => {
+  return db.child(key).child("options").orderByChild("option_score");
+};
+
+////
 const update = (key, data) => {
   return db.child(key).update(data);
 };
@@ -74,6 +79,8 @@ export default {
   getPollOptions,
   getPollTitle,
   getPollScores,
-  voteg,
+  vote,
   getlastScore,
+  getWinnerOption,
+  getPollResult,
 };

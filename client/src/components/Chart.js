@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Input from "./Input.js";
 import List from "./List.js";
 
@@ -11,19 +11,30 @@ import { PieChart } from "react-minimal-pie-chart";
 
 const Result = () => {
   const url = useParams();
-
-  const getResults = [
-    { title: "One", value: 10, color: "#E38627" },
-    { title: "Two", value: 15, color: "#C13C37" },
-  ];
-
   const [options] = useListVals(pollService.getPollOptions(url.id));
   console.log(options);
+
+  const chartItem = {
+    title: "",
+    value: "",
+    color: "#C13C37",
+  };
+
+  const [chart, setChart] = useState(chartItem);
+
+  const handleChart = () => {};
+  console.log(chart);
+
+  const getResults = [
+    { title: "One", value: 15, color: "#E38627" },
+    { title: "Two", value: 15, color: "#C13C37" },
+  ];
 
   return (
     <>
       <div className="col-sm chart">
         <PieChart viewBoxSize="[150,150]" data={getResults} />
+        <input type="button" value="getir pls" onClick={handleChart} />
       </div>
     </>
   );

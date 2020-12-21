@@ -5,7 +5,6 @@ import { useList, useListVals } from "react-firebase-hooks/database";
 const Input = () => {
   const pollsItem = {
     title: "",
-    options: "",
   };
   //input statics
   const [polls, setPolls] = useState(pollsItem);
@@ -30,25 +29,12 @@ const Input = () => {
     console.log(updatedOptions);
   };
 
-  const pushConsole = () => {
-    console.log(optionState);
-  };
-
   const handleRemove = (id) => {
     const beforeRemove = [...optionState];
     beforeRemove.splice(id, 1);
     console.log(beforeRemove);
 
     setOptionState(beforeRemove);
-  };
-
-  const addid = () => {
-    const addID = [...optionState];
-    console.log(addID);
-    for (var i = 0; i < addID.length; i++) {
-      addID[i]["option_id"] = i;
-      console.log(addID[i]);
-    }
   };
 
   // push new one
@@ -65,7 +51,6 @@ const Input = () => {
     var data = {
       id: len.length + 1,
       title: polls.title,
-      option: "polls.option",
       options: optionState,
     };
     pollService.create(data);
@@ -83,14 +68,6 @@ const Input = () => {
           name="title"
           onChange={handleInput}
           placeholder="Title"
-        />
-        <input
-          className="form-control"
-          type="text"
-          value={polls.option}
-          name="option"
-          onChange={handleInput}
-          placeholder="Option"
         />
 
         <input type="button" value="Add New Option" onClick={addOption} />
@@ -117,9 +94,6 @@ const Input = () => {
             </div>
           );
         })}
-
-        <input type="button" value="Submit" onClick={pushConsole} />
-        <input type="button" value="ID" onClick={addid} />
 
         <input
           onClick={save}

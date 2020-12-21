@@ -17,7 +17,7 @@ const Pollpage = () => {
   const votePush = () => {
     console.log(voted.option_id);
 
-    pollService.voteg(url.id, voted.option_id, voted.option_score + 1);
+    pollService.vote(url.id, voted.option_id, voted.option_score + 1);
   };
 
   const pollpage = (

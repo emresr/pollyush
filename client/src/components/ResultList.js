@@ -9,7 +9,8 @@ import { useList, useListVals } from "react-firebase-hooks/database";
 const ResultList = () => {
   const url = useParams();
 
-  const [options] = useListVals(pollService.getPollOptions(url.id));
+  const [options] = useListVals(pollService.getPollResult(url.id));
+  options.reverse();
   console.log(options);
 
   const pollpage = (

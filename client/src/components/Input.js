@@ -59,48 +59,70 @@ const Input = () => {
 
   return (
     <div class="col-sm input">
-      <form className="poll-form ">
-        <input
-          className="form-control"
-          size="50"
-          type="text"
-          value={polls.title}
-          name="title"
-          onChange={handleInput}
-          placeholder="Title"
-        />
-
-        <input type="button" value="Add New Option" onClick={addOption} />
-        {optionState.map((val, idx) => {
-          const optionId = `option_title-${idx}`;
-          return (
-            <div key={`option-${idx}`}>
-              <label htmlFor={optionId}>{`Option #${idx + 1}`}</label>
+      <form className="form-horizontal">
+        <fieldset>
+          <legend>Create a new poll</legend>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">
+              Email
+            </label>
+            <div class="col-lg-10">
               <input
+                className="form-control"
+                size="50"
                 type="text"
-                name={optionId}
-                data-idx={idx}
-                id={optionId}
-                className="option_title"
-                value={optionState[idx].option_title}
-                onChange={handleOptionChange}
-              />
-              <input
-                className="btn-danger"
-                type="button"
-                value="Remove"
-                onClick={handleRemove}
+                value={polls.title}
+                name="title"
+                onChange={handleInput}
+                placeholder="Title"
               />
             </div>
-          );
-        })}
+          </div>
 
-        <input
-          onClick={save}
-          type="button"
-          className="btn-success"
-          value="Push"
-        />
+          {optionState.map((val, idx) => {
+            const optionId = `option_title-${idx}`;
+            return (
+              <div class="form-group">
+                <div key={`option-${idx}`}>
+                  <label
+                    class="col-lg-2 control-label"
+                    htmlFor={optionId}
+                  >{`Option #${idx + 1}`}</label>
+                  <div class="col-lg-10">
+                    <input
+                      type="text"
+                      name={optionId}
+                      data-idx={idx}
+                      id={optionId}
+                      className="option_title"
+                      value={optionState[idx].option_title}
+                      onChange={handleOptionChange}
+                    />
+                    <input
+                      className="btn-danger"
+                      type="button"
+                      value="Remove"
+                      onClick={handleRemove}
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+
+          <input
+            onClick={save}
+            type="button"
+            className="btn-success"
+            value="Add Poll"
+          />
+          <input
+            type="button"
+            className="btn-primary"
+            value="Add Option"
+            onClick={addOption}
+          />
+        </fieldset>
       </form>
     </div>
   );

@@ -24,8 +24,11 @@ const ResultList = () => {
                   <div key={option.option_id}>
                     <div key={option.option_id}>
                       <label class="">
-                        {option.option_title}-{option.option_score}
+                        {option.option_title}-{option.option_score} 
                       </label>
+                                      <div class="progress progress-striped active">
+                         <div class="progress-bar progress-bar-info" style={{width: "{option.option_score + 50}%"}}/>
+                       </div>
                     </div>
                   </div>
                 ))}

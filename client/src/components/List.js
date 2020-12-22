@@ -4,7 +4,7 @@ import pollService from "../services/pollService";
 import { useList, useListVals } from "react-firebase-hooks/database";
 
 const List = () => {
-  const [polls] = useList(pollService.getAll());
+  const [polls, loading] = useList(pollService.getAll());
   polls.reverse();
   // console.log(polls)
 
@@ -15,15 +15,20 @@ const List = () => {
 
   return (
     <div class="col-sm">
-      <h6 className="list-title"> Latest Polls</h6>
 
-      {polls &&
+      <h6 className="list-title"> Latest Polls</h6>
+                  {loading && <div class="spinner-border text-danger"/>}
+
+      {!loading && polls &&
         polls.map((poll, index) => (
           <div key={polls.poll_id} className="list-item">
             <Link className="btn list-link" to={`/poll/${poll.key}`}>
               <a target="_blank">
                 <h1>{poll.val().title} </h1>
                 <h3 className="item-option">Option </h3>
+                <div class="progress progress-striped active">
+                   <div class="progress-bar progress-bar-info" style={{width: "80%"}}/>
+               </div>
               </a>
             </Link>
           </div>

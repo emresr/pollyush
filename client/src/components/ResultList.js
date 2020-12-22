@@ -11,7 +11,7 @@ const ResultList = () => {
 
   const [options] = useListVals(pollService.getPollResult(url.id));
   options.reverse();
-  console.log(options);
+  //console.log(options);
 
   const pollpage = (
     <div>

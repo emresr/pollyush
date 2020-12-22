@@ -12,9 +12,8 @@ const getKey = () => {
 
 //list
 const getWinnerOption = (key) => {
-  return db.child(key).child("options").orderByChild('option_score');
+  return db.child(key).child("options").orderByChild("option_score");
 };
-
 
 // Input
 
@@ -45,7 +44,6 @@ const getlastScore = (key) => {
 };
 
 const vote = (key, voteid, newScore) => {
-
   return db
     .child(key)
     .child("options")
@@ -56,9 +54,8 @@ const vote = (key, voteid, newScore) => {
 //Result
 
 const getPollResult = (key) => {
-  return db.child(key).child("options").orderByChild('option_score');
+  return db.child(key).child("options").orderByChild("option_score");
 };
-
 
 ////
 const update = (key, data) => {

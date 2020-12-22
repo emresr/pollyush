@@ -36,12 +36,12 @@ gg
 
 # In the Future
 
-  - Owners can add option
-  -IP chekcer
+  - Dark Theme
+  - IP chekcer
+
+  - Random URL
+  - Private Poll
+  - Double,Triple points
+
   - Countdown
   - Add Image to Poll
-  - Add Deadline
-  - Dark Theme
-  -Random URL
-  -Private Poll
-  -Double,Triple points

@@ -33,11 +33,12 @@ const Pollpage = () => {
       <Header />
       <div className="container">
         <div className="row">
+                          {loading && <div class="spinner-border text-danger"/>}
+
           <div className="ol-sm-6 mx-auto pollpage-item">
             <div className="pollpage-title">
               <h2>{}</h2>
               
-                  {loading && <div class="spinner-border text-danger"/>}
       {!loading &&
               options &&
                 options.map((option, index) => (

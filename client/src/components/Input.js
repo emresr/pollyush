@@ -55,7 +55,7 @@ const Input = () => {
       options: optionState,
     };
     pollService.create(data);
-    history.push('/poll/-MPAMGqKefwlCDTDTrJ3')
+    history.push('/poll/-MPAMGqKefwlCDTDTrJ3')  // option[len].key // option[len].key
   };
 
   return (

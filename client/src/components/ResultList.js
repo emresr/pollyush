@@ -13,6 +13,8 @@ const ResultList = () => {
   options.reverse();
   //console.log(options);
 
+  
+
   const pollpage = (
     <div>
       <div className="container">
@@ -29,7 +31,7 @@ const ResultList = () => {
                       <div class="progress progress-striped active">
                         <div
                           class="progress-bar progress-bar-info"
-                          style={{width: "90%"}}
+                          style={{width: `${option.option_score}%`}}
                         />
                       </div>
                     </div>

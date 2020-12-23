@@ -38,7 +38,7 @@ gg
 
   - Dark Theme
   - IP chekcer
-
+  - Multiple Answer
   - Random URL
   - Private Poll
   - Double,Triple points

@@ -6,6 +6,10 @@ const getAll = () => {
   return db;
 };
 
+const getLatest = () => {
+  return db;
+};
+
 const getKey = () => {
   return firebase.ref("/");
 }; // ?
@@ -83,4 +87,5 @@ export default {
   getlastScore,
   getWinnerOption,
   getPollResult,
+  getLatest
 };

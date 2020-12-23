@@ -6,7 +6,7 @@ import { useList, useListVals } from "react-firebase-hooks/database";
 const List = () => {
   const [polls, loading] = useList(pollService.getAll());
   polls.reverse();
-  // console.log(polls)
+  console.log(polls);
 
   const key = "-MP5ajCFj95G7LkLefJV";
   const [optiony] = useListVals(pollService.getWinnerOption(key));
@@ -15,21 +15,22 @@ const List = () => {
 
   return (
     <div class="col-sm">
-
       <h6 className="list-title"> Latest Polls</h6>
-                  {loading && <div class="spinner-border text-danger"/>}
+      {loading && <div class="spinner-border text-danger" />}
 
-      {!loading && polls &&
+      {!loading &&
+        polls &&
         polls.map((poll, index) => (
           <div key={polls.poll_id} className="list-item">
             <Link className="btn list-link" to={`/poll/${poll.key}`}>
-              <a target="_blank">
-                <h1>{poll.val().title} </h1>
-                <h3 className="item-option">Option </h3>
-                <div class="progress progress-striped active">
-                   <div class="progress-bar progress-bar-info" style={{width: "80%"}}/>
-               </div>
-              </a>
+              <h1>{poll.val().title} </h1>
+              <h3 className="item-option">Option </h3>
+              <div class="progress progress-striped active">
+                <div
+                  class="progress-bar progress-bar-info"
+                  style={{ width: "80%" }}
+                />
+              </div>
             </Link>
           </div>
         ))}

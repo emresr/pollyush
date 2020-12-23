@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { Link, useParams , useHistory  } from "react-router-dom";
 import pollService from "../services/pollService";
 import { useList, useListVals } from "react-firebase-hooks/database";
 
 const Input = () => {
+   const history = useHistory();
+
   const pollsItem = {
     title: "",
   };
@@ -26,23 +29,21 @@ const Input = () => {
     const updatedOptions = [...optionState];
     updatedOptions[e.target.dataset.idx][e.target.className] = e.target.value;
     setOptionState(updatedOptions);
-    console.log(updatedOptions);
   };
 
   const handleRemove = (id) => {
     const beforeRemove = [...optionState];
     beforeRemove.splice(id, 1);
-    console.log(beforeRemove);
 
     setOptionState(beforeRemove);
   };
 
   // push new one
   const [len] = useListVals(pollService.getAll());
-
+  len.reverse()
+   console.log(len)
   const save = () => {
     const addID = [...optionState];
-    console.log(addID);
     for (var i = 0; i < addID.length; i++) {
       addID[i]["option_id"] = i;
       setOptionState(addID);
@@ -54,7 +55,7 @@ const Input = () => {
       options: optionState,
     };
     pollService.create(data);
-    //  history.push('/thank-you')  https://gist.github.com/elitan/5e4cab413dc201e0598ee05287ee4338
+    history.push('/poll/-MPAMGqKefwlCDTDTrJ3')
   };
 
   return (

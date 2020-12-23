@@ -5,13 +5,10 @@ import { useList, useListVals } from "react-firebase-hooks/database";
 
 const List = () => {
   const [polls, loading] = useList(pollService.getLatest());
+   polls.reverse()
 
-   const list =  [...polls]
-   console.log(list)
-
-  const key = "-MP5ajCFj95G7LkLefJV";
+  const key = "-MPEs98o0RMnODbu0vAk";
   const [optiony] = useListVals(pollService.getWinnerOption(key));
-  optiony.reverse();
   console.log(optiony);
 
   return (

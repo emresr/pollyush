@@ -7,16 +7,13 @@ const getAll = () => {
 };
 
 const getLatest = () => {
-  return db;
+  return db.orderByChild("key").limitToLast(5);
 };
 
-const getKey = () => {
-  return firebase.ref("/");
-}; // ?
 
 //list
 const getWinnerOption = (key) => {
-  return db.child(key).child("options").orderByChild("option_score");
+  return db.child(key).child("options").orderByChild("option_score").limitToFirst(1);
 };
 
 // Input

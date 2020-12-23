@@ -2,10 +2,8 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
-import AaInput from "./components/AaInput";
 import List from "./components/List";
 import Pollpage from "./components/Pollpage";
-import CcPollpage from "./components/CcPollpage";
 
 import Mainpage from "./components/Mainpage";
 import Header from "./components/Header";

@@ -9,7 +9,7 @@ import { useList, useListVals } from "react-firebase-hooks/database";
 
 import { PieChart } from "react-minimal-pie-chart";
 
-const Result = () => {
+const Chart = () => {
   const url = useParams();
   const [options] = useListVals(pollService.getPollOptions(url.id));
   // console.log(options);
@@ -24,18 +24,14 @@ const Result = () => {
 
   //one item to chart
 
-  let lmao = {
-    title: "",
-    value: "",
-    color: "#C13C37",
-  };
+  let lmao = []
 
   console.log(lmao);
   const handleChart = () => {
+
     {
-      options && options.forEach((option, index) => lmao.push(option));
+      options && options.forEach((option, index) => lmao.push(option.option_score));
     }
-    //setChart({...chart, "title":1,value:99})
     console.log(lmao);
   };
 
@@ -53,5 +49,4 @@ const Result = () => {
     </>
   );
 };
-
-export default Result;
+export default Chart

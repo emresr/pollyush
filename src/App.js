@@ -3,12 +3,13 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import List from "./components/List";
-import Pollpage from "./components/Pollpage";
+import Pollpage from "./components/PollPage";
 
 import AllPolls from "./components/AllPolls";
 import Mainpage from "./components/Mainpage";
 import Header from "./components/Header";
 import Result from "./components/Result";
+
 
 function App() {
   return (

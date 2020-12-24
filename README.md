@@ -1,4 +1,4 @@
-# Pollyush
+# Popells
 
 Polly is a poll app built with React.
 
@@ -12,7 +12,8 @@ Polly is a poll app built with React.
 ### Tech
 
 * [ReactJS] - HTML enhanced for web apps!
-* 
+* Firebase
+
 
 
 ### Installation
@@ -21,16 +22,13 @@ Polly is a poll app built with React.
 
 Install the dependencies and devDependencies and start the server.
 
-```sh
-$ cd 
-$ npm install -d
-$ node app
-```
+$ add your firebase config to firebase.js
+$ cd client 
+$ npm install
+$ npm start
+
 
 For production environments...
-
-ggggg`gggg
-gg
 
 
 

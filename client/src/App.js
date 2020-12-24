@@ -5,6 +5,7 @@ import "./App.css";
 import List from "./components/List";
 import Pollpage from "./components/Pollpage";
 
+import AllPolls from "./components/AllPolls";
 import Mainpage from "./components/Mainpage";
 import Header from "./components/Header";
 import Result from "./components/Result";
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Mainpage} />
+          <Route exact path="/all" component={AllPolls} />
           <Route exact path="/poll/:id" component={Pollpage} />
           <Route exact path="/result/:id" component={Result} />
         </Switch>

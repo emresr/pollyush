@@ -24,13 +24,13 @@ const Chart = () => {
 
   //one item to chart
 
-  let lmao = []
+  let lmao = [];
 
   console.log(lmao);
   const handleChart = () => {
-
     {
-      options && options.forEach((option, index) => lmao.push(option.option_score));
+      options &&
+        options.forEach((option, index) => lmao.push(option.option_score));
     }
     console.log(lmao);
   };
@@ -49,4 +49,4 @@ const Chart = () => {
     </>
   );
 };
-export default Chart
+export default Chart;

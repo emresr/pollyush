@@ -10,10 +10,13 @@ const getLatest = () => {
   return db.orderByChild("key").limitToLast(5);
 };
 
-
 //list
 const getWinnerOption = (key) => {
-  return db.child(key).child("options").orderByChild("option_score").limitToFirst(1);
+  return db
+    .child(key)
+    .child("options")
+    .orderByChild("option_score")
+    .limitToFirst(1);
 };
 
 // Input
@@ -84,5 +87,5 @@ export default {
   getlastScore,
   getWinnerOption,
   getPollResult,
-  getLatest
+  getLatest,
 };

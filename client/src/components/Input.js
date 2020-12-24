@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, useParams , useHistory  } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import pollService from "../services/pollService";
 import { useList, useListVals } from "react-firebase-hooks/database";
 
 const Input = () => {
-   const history = useHistory();
+  const history = useHistory();
 
   const pollsItem = {
     title: "",
@@ -40,8 +40,9 @@ const Input = () => {
 
   // push new one
   const [len] = useListVals(pollService.getAll());
-  len.reverse()
-   console.log(len)
+  const [pushpath] = useList(pollService.getLatest());
+
+  len.reverse();
   const save = () => {
     const addID = [...optionState];
     for (var i = 0; i < addID.length; i++) {
@@ -55,9 +56,12 @@ const Input = () => {
       options: optionState,
     };
     pollService.create(data);
-    
-   // history.push('/poll/-MPAMGqKefwlCDTDTrJ3')
-  };
+    {
+      pushpath && pushpath.map((path, index) => console.log(path.key));
+    }
+    //   history.push('/result/'+ url.id)
+    console.log();
+  }; //arrayın ilk elementinden key al
 
   return (
     <div class="col-sm input">

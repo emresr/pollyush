@@ -14,6 +14,7 @@ const List = () => {
   return (
     <div class="col-sm">
       <h6 className="list-title"> Latest Polls</h6>
+      <div>
       {loading && <div class="spinner-border text-danger" />}
 
       {!loading &&
@@ -32,6 +33,22 @@ const List = () => {
             </Link>
           </div>
         ))}
+      </div>
+     <div className="lmao">
+        {
+        polls &&
+        polls.map((poll, index) => (
+          <div key={polls.poll_id} className="list-item">
+              <h3 className="item-option">Option </h3>
+              <div class="progress progress-striped active">
+                <div
+                  class="progress-bar progress-bar-info"
+                  style={{ width: "80%" }}
+                />
+              </div>
+          </div>
+        ))}
+     </div>
     </div>
   );
 };

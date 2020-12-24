@@ -12,7 +12,7 @@ import { PieChart } from "react-minimal-pie-chart";
 const Chart = () => {
     const url = useParams();
   const [options] = useListVals(pollService.getPollOptions(url.id));
-  console.log(options);
+ // console.log(options);
 
   const blankResult = { title: "", value: "", color: "#E38627" };
   const [resultState, setResultState] = useState([{ ...blankResult }]);
@@ -20,19 +20,24 @@ const Chart = () => {
   const addResult = () => {
     setResultState([...resultState, { ...blankResult }]);
   };
-/*
-  console.log(resultState)
+
+ // console.log(resultState)
+
+  let titles = []
+  let scores = []
 const handleResult = () => {
 
-    setResultState([...resultState, { ...blankResult }]);
-    console.log(resultState)
+  {
+    options &&
+      options.forEach((option, index) => titles.push(option.option_title));
+      options.forEach((option, index) => scores.push(option.option_score));
 
-     const updatedResults = [...resultState];
-    updatedResults[option.option_title][e.target.className] = e.target.value;
-    setResultState(updatedResults);
+  }
+  console.log(titles);
+  console.log(scores)
 
 }
-  */
+  
 
 //get resulta atmayı denesene
   const getResults = [
@@ -44,7 +49,7 @@ const handleResult = () => {
     <>
       <div className="col-sm chart">
         <PieChart viewBoxSize="[150,150]" data={getResults} />
-        <input type="button" value="getir pls" onClick={addResult} />
+        <input type="button" value="getir pls" onClick={handleResult} />
       </div>
     </>
   );

@@ -2,44 +2,39 @@
 
 Polly is a poll app built with React.
 
-  - Create a poll
-  - See results
-  - Share
-  - Analyze with charts
-
-
+- Create a poll
+- See results
+- Share
+- Analyze with charts
 
 ### Tech
 
-* [ReactJS] - HTML enhanced for web apps!
-* Firebase
-
-
+- [ReactJS] - HTML enhanced for web apps!
+- Firebase
 
 ### Installation
 
- requires [Node.js](https://nodejs.org/) v4+ to run.
+requires [Node.js](https://nodejs.org/) v4+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
 $ add your firebase config to firebase.js
-$ cd client 
+$ cd client
 $ npm install
 $ npm start
 
-
 For production environments...
-
-
 
 # In the Future
 
-  - Dark Theme
-  - IP chekcer
-  - Multiple Answer
-  - Random URL
-  - Private Poll
-  - Double,Triple points
+- Dark Theme
+- IP chekcer
+- Multiple Answer
+- Random URL
+- Private Poll
+- Double,Triple points
 
-  - Countdown
-  - Add Image to Poll
+- Scroll
+
+- Countdown
+- Add Image to Poll

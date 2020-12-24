@@ -40,7 +40,6 @@ const Input = () => {
 
   // push new one
   const [len] = useListVals(pollService.getAll());
-  const [pushpath] = useList(pollService.getLatest());
 
   len.reverse();
   const save = () => {
@@ -56,12 +55,10 @@ const Input = () => {
       options: optionState,
     };
     pollService.create(data);
-    {
-      pushpath && pushpath.map((path, index) => console.log(path.key));
-    }
-    //   history.push('/result/'+ url.id)
+   var key = pollService.create(data).toString()
+   history.push('/poll/'+ key.substring(69, 100))
     console.log();
-  }; //arrayın ilk elementinden key al
+  }; 
 
   return (
     <div class="col-sm input">

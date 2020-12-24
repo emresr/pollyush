@@ -23,6 +23,7 @@ const List = () => {
           <div key={polls.poll_id} className="list-item">
             <Link className="btn list-link" to={`/poll/${poll.key}`}>
               <h1>{poll.val().title} </h1>
+             </Link>
               <h3 className="item-option">Option </h3>
               <div class="progress progress-striped active">
                 <div
@@ -30,7 +31,8 @@ const List = () => {
                   style={{ width: "80%" }}
                 />
               </div>
-            </Link>
+            
+            
           </div>
         ))}
       </div>

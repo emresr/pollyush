@@ -35,7 +35,7 @@ const Pollpage = () => {
         <div className="row">
           {loading && <div class="spinner-border text-danger" />}
 
-          <div className="ol-sm-6 mx-auto pollpage-item">
+          <div className="col-sm-6 mx-auto pollpage-item">
             <div className="pollpage-title">
               <form>
                 <h2>{}</h2>
@@ -60,6 +60,8 @@ const Pollpage = () => {
                 <input type="checkbox" id="box-1" />
                 <label for="box-1">option</label>
               </div>
+             </div>
+            <div className="col-sm-6">
               <button onClick={votePush}> Vote </button>
               <Link className="btn result-button" to={`/result/${url.id}`}>
                 Result
@@ -83,7 +85,8 @@ const Pollpage = () => {
               <button onClick={setCopied}>
                 {isCopied ? "Copied!" : "Copy Poll Link"}
               </button>
-            </div>
+              </div> 
+            
           </div>
         </div>
       </div>

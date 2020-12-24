@@ -1,9 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
-import Input from "./Input.js";
-import List from "./List.js";
+
+import {Bar} from "react-chartjs-2";
+
 
 import { useParams } from "react-router-dom";
-import { useRef } from "react"
 import pollService from "../services/pollService";
 import { useList, useListVals } from "react-firebase-hooks/database";
 
@@ -38,6 +38,19 @@ const handleResult = () => {
 
 }
   
+const state = {
+  labels: ['January', 'February', 'March',
+           'April', 'May'],
+  datasets: [
+    {
+      label: 'Rainfall',
+      backgroundColor: 'rgba(75,192,192,1)',
+      borderColor: 'rgba(0,0,0,1)',
+      borderWidth: 2,
+      data: {scores}
+    }
+  ]
+}
 
 //get resulta atmayı denesene
   const getResults = [
@@ -48,6 +61,21 @@ const handleResult = () => {
   return (
     <>
       <div className="col-sm chart">
+      <Bar
+          data={state}
+          options={{
+            title:{
+              display:true,
+              text:'Average Rainfall per month',
+              fontSize:20
+            },
+            legend:{
+              display:true,
+              position:'right'
+            }
+          }}
+        />
+
         <PieChart viewBoxSize="[150,150]" data={getResults} />
         <input type="button" value="getir pls" onClick={handleResult} />
       </div>

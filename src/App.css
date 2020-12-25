@@ -18,17 +18,18 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #5299a5;
+  background: #c25817;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgb(85, 85, 85);
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgb(22, 22, 22);
 }
 
 /*input */
@@ -62,24 +63,23 @@
 }
 
 /* PollPage */
-.polly {
-  align-content: center;
-}
-
-.pollpage-title {
+.result-title {
   font-size: 30px;
   font-weight: bold;
 }
-.pollpage-item {
+.result-item {
+  min-width: 400px;
   margin-top: 30px;
   display: flex;
   align-items: center;
 }
 .chart {
+  max-width: 300px;
+  max-height: 300px;
   margin: 30px 0px 0px 50px;
 }
-.pollpage-check {
-  margin-right: 5px;
+.progress-item {
+  min-height: 1000px;
 }
 
 /* Result */
@@ -115,6 +115,12 @@
   border-radius: 10px;
   border-color: gray;
   font-size: 30px;
+}
+
+/* chart */
+.chartdiv {
+  max-width: 200px;
+  max-height: 200px;
 }
 
 /* Footer */

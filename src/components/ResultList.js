@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { PieChart } from "react-minimal-pie-chart";
 
 import pollService from "../services/pollService";
 import { useList, useListVals } from "react-firebase-hooks/database";
@@ -12,13 +11,18 @@ const ResultList = () => {
   const [options] = useListVals(pollService.getPollResult(url.id));
   options.reverse();
   //console.log(options);
+  let scores = []
+  options.forEach((option, index) => scores.push(option.option_score));
+  function sum(score) {
+    return score.reduce((a, b) => a + b, 0);
+  }
+  console.log(sum(scores))
 
-  const pollpage = (
+  const resultlist = (
     <div>
-      <div className="container">
-        <div className="row">
-          <div className="col-sm pollpage-item">
-            <div className="pollpage-title">
+
+          <div className="col-sm-8  result-item">
+            <div className="result-title">
               {options &&
                 options.map((option, index) => (
                   <div key={option.option_id}>
@@ -26,22 +30,21 @@ const ResultList = () => {
                       <label class="">
                         {option.option_title}-{option.option_score}
                       </label>
-                      <div class="progress progress-striped active">
+                      <div class="progress progress-striped active ">
                         <div
-                          class="progress-bar progress-bar-info"
-                          style={{ width: `${option.option_score}%` }}
+                          class="progress-bar progress-bar-info progress-item"
+                          style={{ width: `${(100*option.option_score/sum(scores))}%` }}
                         />
                       </div>
                     </div>
                   </div>
                 ))}
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
   );
 
-  return <>{pollpage}</>;
+  return <>{resultlist}</>;
 };
 export default ResultList;

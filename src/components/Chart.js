@@ -27,28 +27,31 @@ const Chart = () => {
 
   let titles = []
   let scores = []
-  options.forEach((option, index) => scores.push(option.option_score));
-  options.forEach((option, index) => titles.push(option.option_title));
-  
+  let colors = []
+  options.forEach((option) => scores.push(option.option_score));
+  options.forEach((option) => titles.push(option.option_title));
+  options.forEach( option => colors.push("#"+Math.floor(Math.random()*16777215).toString(16)));
+
 const score = {
   labels: titles ,
   datasets: [
     {
       label: 'Rainfall',
-      backgroundColor: 'rgba(75,192,192,1)',
-      borderColor: 'rgba(0,0,0,1)',
-      borderWidth: 2,
+      backgroundColor: colors,
+      borderColor: '#f1f1f1',
+      borderWidth: 0.5,
       data:scores ,
     }
   ]
 }
-//console.log(state)
 
   return (
     <>
-      <div className="col-sm chart">
-      <Pie
+      <div className="col-sm-4 chart">
+        <Pie
           data={score}
+          width={"300px"}
+          height={"300px"}
           options={{
             title:{
               display:true,
@@ -58,11 +61,11 @@ const score = {
             legend:{
               display:true,
               position:'right'
-            }
+            },
+            maintainAspectRatio: true 
           }}
-        />
-
-        <input type="button" value="getir pls"  />
+          
+                  />
       </div>
     </>
   );

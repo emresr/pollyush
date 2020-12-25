@@ -7,9 +7,12 @@ const List = () => {
   const [polls, loading] = useList(pollService.getLatest());
   polls.reverse();
 
-  const key = "-MPOo8EJ551up-4wiSE4";
+
+
+  const Winnerid = (key) => { 
   const [optiony] = useListVals(pollService.getWinnerOption(key));
-  // console.log(optiony.reverse());
+  
+  }
 
   return (
     <div class="col-sm">
@@ -20,7 +23,7 @@ const List = () => {
       {!loading &&
         polls &&
         polls.map((poll, index) => { 
-
+          console.log(Winnerid(poll.key))
           return ( 
           <div key={polls.poll_id} className="list-item">
             <Link className="btn list-link" to={`/poll/${poll.key}`}>

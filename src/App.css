@@ -7,9 +7,28 @@
   margin: 0px;
   background: gray;
   text-align: center;
-  display: block;
   width: 100%;
   vertical-align: middle;
+}
+/*Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5299a5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /*input */
@@ -41,8 +60,7 @@
 .item-option {
   font-size: 20px;
 }
-.list-link {
-}
+
 /* PollPage */
 .polly {
   align-content: center;
@@ -242,7 +260,4 @@ input[type="checkbox"]:checked + label:before {
   border-left-color: transparent;
   -webkit-transform: rotate(30deg);
   transform: rotate(30deg);
-}
-.lmao {
-  color: black;
 }

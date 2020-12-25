@@ -12,11 +12,7 @@ const getLatest = () => {
 
 //list
 const getWinnerOption = (key) => {
-  return db
-    .child(key)
-    .child("options")
-    .orderByChild("option_score")
-    .limitToFirst(1);
+  return db.child(key).child("options").orderByChild("option_score").limitToLast(1);
 };
 
 // Input
@@ -38,15 +34,8 @@ const getPollOptions = (key) => {
   return db.child(key).child("options");
 };
 
-const getPollScores = (key) => {
-  return db.child(key).child("scores");
-};
 
 //Pollpage voting
-const getlastScore = (key) => {
-  return db.child(key).child("options").child("option1").child("option_score");
-};
-
 const vote = (key, voteid, newScore) => {
   return db
     .child(key)
@@ -82,9 +71,7 @@ export default {
   removeAll,
   getPollOptions,
   getPollTitle,
-  getPollScores,
   vote,
-  getlastScore,
   getWinnerOption,
   getPollResult,
   getLatest,

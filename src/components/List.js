@@ -7,9 +7,9 @@ const List = () => {
   const [polls, loading] = useList(pollService.getLatest());
   polls.reverse();
 
-  const key = "-MPEs98o0RMnODbu0vAk";
+  const key = "-MPOo8EJ551up-4wiSE4";
   const [optiony] = useListVals(pollService.getWinnerOption(key));
-  //console.log(optiony);
+  // console.log(optiony.reverse());
 
   return (
     <div class="col-sm">
@@ -19,7 +19,9 @@ const List = () => {
 
       {!loading &&
         polls &&
-        polls.map((poll, index) => (
+        polls.map((poll, index) => { 
+
+          return ( 
           <div key={polls.poll_id} className="list-item">
             <Link className="btn list-link" to={`/poll/${poll.key}`}>
               <h1>{poll.val().title} </h1>
@@ -34,23 +36,10 @@ const List = () => {
             
             
           </div>
-        ))}
+          );
+})}
       </div>
-     <div className="lmao">
-        {
-        polls &&
-        polls.map((poll, index) => (
-          <div key={polls.poll_id} className="list-item">
-              <h3 className="item-option">Option </h3>
-              <div class="progress progress-striped active">
-                <div
-                  class="progress-bar progress-bar-info"
-                  style={{ width: "80%" }}
-                />
-              </div>
-          </div>
-        ))}
-     </div>
+
     </div>
   );
 };

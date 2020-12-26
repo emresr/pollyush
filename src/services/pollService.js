@@ -7,7 +7,7 @@ const getAll = () => {
 };
 
 const getLatest = () => {
-  return db.orderByChild("key").limitToLast(5);
+  return db.orderByChild("key").limitToLast(7);
 };
 
 //list
@@ -27,7 +27,7 @@ const createOptions = (key, dataOption) => {
 
 //Pollpage
 const getPollTitle = (key) => {
-  return db.child(key).child("title");
+  return db.child(key);
 };
 
 const getPollOptions = (key) => {

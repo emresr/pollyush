@@ -45,9 +45,10 @@ const score = {
   ]
 }
 
+
   return (
     <>
-      <div className="col-sm-4 chart">
+      <div className="col-sm-8 chart">
         <Pie
           data={score}
           width={"300px"}
@@ -55,8 +56,7 @@ const score = {
           options={{
             title:{
               display:true,
-              text:'Average Rainfall per month',
-              fontSize:20
+              fontSize:50
             },
             legend:{
               display:true,

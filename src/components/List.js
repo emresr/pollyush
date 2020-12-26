@@ -14,36 +14,30 @@ const List = () => {
   
   }
 
-  return (
-    <div class="col-sm">
-      <h6 className="list-title"> Latest Polls</h6>
+const list = ( 
+<div class="col-sm list">
+      <h6 className="list-title">Latest Polls</h6>
       <div>
       {loading && <div class="spinner-border text-danger" />}
 
       {!loading &&
         polls &&
         polls.map((poll, index) => { 
-          console.log(Winnerid(poll.key))
           return ( 
           <div key={polls.poll_id} className="list-item">
             <Link className="btn list-link" to={`/poll/${poll.key}`}>
               <h1>{poll.val().title} </h1>
              </Link>
-              <h3 className="item-option">Option </h3>
-              <div class="progress progress-striped active">
-                <div
-                  class="progress-bar progress-bar-info"
-                  style={{ width: "80%" }}
-                />
-              </div>
-            
-            
+
           </div>
           );
 })}
       </div>
 
     </div>
+)
+  return (
+    <> {list} </>
   );
 };
 

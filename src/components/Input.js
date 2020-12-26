@@ -62,12 +62,13 @@ const Input = () => {
 
   return (
     <div class="col-sm input">
+     <h1 className="form-title">Create new poll</h1>
       <form className="form-horizontal">
         <fieldset>
-          <legend>Create a new poll</legend>
+
           <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">
-              Email
+            <label for="inputEmail" class="col-lg-2">
+              Poll Title
             </label>
             <div class="col-lg-10">
               <input
@@ -117,7 +118,7 @@ const Input = () => {
             onClick={save}
             type="button"
             className="btn-success"
-            value="Add Poll"
+            value="Create!"
           />
           <input
             type="button"

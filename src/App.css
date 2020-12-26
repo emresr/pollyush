@@ -36,8 +36,15 @@
 .input {
   margin-top: 50px;
 }
-
+.form-title {
+  font-weight: bold;
+  font-size: 30px;
+}
 /* List */
+.list {
+  align-content: center;
+  margin: auto;
+}
 .list-title {
   font-size: 40px;
   font-weight: bold;
@@ -46,12 +53,14 @@
 
 .list-item {
   background-color: rgba(0, 255, 0, 0.2);
-  max-width: 400px;
   border-style: solid;
-  border-width: 3px;
+  border-width: 2px;
   border-radius: 10px;
-  border-color: gray;
-  font-size: 30px;
+  border-color: rgb(15, 15, 15);
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 70px;
 }
 .item-title {
   font-size: 30px;
@@ -62,24 +71,33 @@
   font-size: 20px;
 }
 
-/* PollPage */
+/* Result */
 .result-title {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
 }
 .result-item {
-  min-width: 400px;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
+  min-width: 300px;
+  margin-top: 50px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 60px;
+  margin-right: auto;
 }
 .chart {
   max-width: 300px;
   max-height: 300px;
-  margin: 30px 0px 0px 50px;
+  margin: 20px 0px 0px 50px;
+  font-size: 60px;
+}
+.progress-div {
+  height: 40px;
+  display: inline-block;
+  min-width: 300px;
 }
 .progress-item {
-  min-height: 1000px;
+  height: 40px;
+  color: black;
 }
 
 /* Result */
@@ -93,6 +111,7 @@
 }
 .pollpage-item {
   margin-top: 30px;
+  align-items: center;
 }
 .chart {
   margin: 30px 0px 0px 50px;
@@ -145,17 +164,7 @@
   body {
     font-family: Verdana;
     padding: 10px;
-    background-image: url("assets/bglow.png");
-    background-size: 120% 150%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  body {
-    font-family: Verdana;
-    padding: 10px;
-    background-image: url("assets/bg.png");
-    background-size: cover;
-    background-size: 150% 120%;
+    background-color: #c25817;
     background-position: center;
   }
 }

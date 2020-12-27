@@ -1,7 +1,7 @@
 # Popells
 
 
-popells.herokuapp.com/
+<a href="http://popells.herokuapp.com/"> Live on heroku </a>
 
 
 Polly is a poll app built with React.

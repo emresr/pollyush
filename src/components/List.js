@@ -18,7 +18,8 @@ const list = (
 <div class="col-sm list">
       <h6 className="list-title">Latest Polls</h6>
       <div>
-      {loading && <div class="spinner-border text-danger" />}
+      {loading && <div class="spinner-main spinner-border text-danger" />}
+
 
       {!loading &&
         polls &&
@@ -26,7 +27,7 @@ const list = (
           return ( 
           <div key={polls.poll_id} className="list-item">
             <Link className="btn list-link" to={`/poll/${poll.key}`}>
-              <span>{poll.val().title} </span>
+              <span className="poll-title-list">{poll.val().title} </span>
              </Link>
 
           </div>

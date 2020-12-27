@@ -31,14 +31,8 @@ For production environments...
 
 # In the Future
 
-- Dark Theme
-- IP chekcer
 - Multiple Answer
-- Random URL
 - Private Poll
 - Double,Triple points
 
-- Scroll
 
-- Countdown
-- Add Image to Poll

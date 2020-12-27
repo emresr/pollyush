@@ -12,7 +12,7 @@ const Pollpage = () => {
   const [options, loading] = useListVals(pollService.getPollOptions(url.id));
   // console.log(options);
   const [isCopied, setCopied] = useClipboard(
-    "http://localhost:3000/poll/" + url.id
+    "http://popells.herokuapp.com/poll/" + url.id
   );
   const [title] = useListVals(pollService.getPollTitle(url.id));
 

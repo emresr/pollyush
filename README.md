@@ -1,5 +1,9 @@
 # Popells
 
+
+<a href="http://popells.herokuapp.com/"> Live on heroku </a>
+
+
 Polly is a poll app built with React.
 
 - Create a poll
@@ -27,14 +31,8 @@ For production environments...
 
 # In the Future
 
-- Dark Theme
-- IP chekcer
 - Multiple Answer
-- Random URL
 - Private Poll
 - Double,Triple points
 
-- Scroll
 
-- Countdown
-- Add Image to Poll

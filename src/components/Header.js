@@ -8,7 +8,7 @@ const Header = () => {
         <h1 className="item-title">Popells </h1>
       </Link>
       <h4 className="text-center mb-4">
-        <i>A poll app built with React </i>
+        <i>Poll app built with React </i>
       </h4>
     </div>
   );

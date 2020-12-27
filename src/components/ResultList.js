@@ -8,6 +8,9 @@ import { useList, useListVals } from "react-firebase-hooks/database";
 const ResultList = () => {
   const url = useParams();
 
+  const [title] = useListVals(pollService.getPollTitle(url.id));
+  console.log(title[2])
+
   const [options] = useListVals(pollService.getPollResult(url.id));
   options.reverse();
   //console.log(options);
@@ -21,14 +24,17 @@ const ResultList = () => {
   const resultlist = (
     <div>
 
+
           <div className="col-sm-4 result-item">
             <div className="result-title">
-              <h1>{sum(scores)}</h1> 
+              <h1 className="resultlist-title"> {title[2]} </h1>
+              <h1 className="result-score">{sum(scores)} votes</h1> 
+              <br/>
               {options &&
                 options.map((option, index) => (
                     <div key={option.option_id}>
-                      <label class="">
-                        {option.option_title}-{option.option_score}
+                      <label >
+                       <p className="result-label"> {option.option_title}  -   {option.option_score} </p>
                       </label>
                       <div class="progress progress-striped active progress-div">
                         <div

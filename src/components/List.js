@@ -26,7 +26,7 @@ const list = (
           return ( 
           <div key={polls.poll_id} className="list-item">
             <Link className="btn list-link" to={`/poll/${poll.key}`}>
-              <h1>{poll.val().title} </h1>
+              <span>{poll.val().title} </span>
              </Link>
 
           </div>

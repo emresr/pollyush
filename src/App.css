@@ -36,6 +36,9 @@
 .input {
   margin-top: 50px;
 }
+.form-input {
+  margin-top: 30px;
+}
 .form-title {
   font-weight: bold;
   font-size: 30px;
@@ -43,28 +46,50 @@
 /* List */
 .list {
   align-content: center;
-  margin: auto;
+  margin-top: 50px;
 }
 .list-title {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
 }
-
-.list-item {
-  background-color: rgba(0, 255, 0, 0.2);
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  border-color: rgb(15, 15, 15);
-  font-size: 15px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 70px;
+@media only screen and (min-width: 600px) {
+  .list-item {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 500px;
+    background-color: rgba(0, 255, 0, 0.2);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(15, 15, 15);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+  }
 }
+@media only screen and (max-width: 600px) {
+  .list-item {
+    background-color: rgba(0, 255, 0, 0.2);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(15, 15, 15);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+}
+
 .item-title {
   font-size: 30px;
   font-weight: bold;
+  color: #c0e218;
 }
 
 .item-option {
@@ -76,6 +101,14 @@
   font-size: 40px;
   font-weight: bold;
 }
+.resultlist-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.result-score {
+  font-size: 20px;
+  text-align: right;
+}
 .result-item {
   min-width: 300px;
   margin-top: 50px;
@@ -83,6 +116,9 @@
   text-align: center;
   margin-left: 60px;
   margin-right: auto;
+}
+.result-label {
+  font-size: 15px;
 }
 .chart {
   max-width: 300px;
@@ -104,6 +140,7 @@
 .pollpage-title {
   font-size: 40px;
   font-weight: bold;
+  margin-top: 50px;
 }
 .pollpage-option {
   font-size: 30px;
@@ -275,4 +312,30 @@ input[type="checkbox"]:checked + label:before {
   border-left-color: transparent;
   -webkit-transform: rotate(30deg);
   transform: rotate(30deg);
+}
+
+.form-control {
+  border-radius: 0;
+  border-color: #ccc;
+  border-width: 0 0 2px 0;
+  border-style: none none solid none;
+  box-shadow: none;
+  background-color: #c25817;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #5e9bfc;
+  background-color: #c25817;
+}
+.vote-btn {
+  margin-left: 5px;
+}
+.title-label {
+  display: inline-block;
+}
+input[type="checkbox"] {
+  vertical-align: middle;
+}
+.checkbox {
+  margin-top: 30px;
 }

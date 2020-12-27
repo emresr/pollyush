@@ -27,7 +27,7 @@ const Input = () => {
 
   const handleOptionChange = (e) => {
     const updatedOptions = [...optionState];
-    updatedOptions[e.target.dataset.idx][e.target.className] = e.target.value;
+    updatedOptions[e.target.dataset.idx][e.target.name] = e.target.value;
     setOptionState(updatedOptions);
   };
 
@@ -55,20 +55,21 @@ const Input = () => {
       options: optionState,
     };
     pollService.create(data);
-   var key = pollService.create(data).toString()
-   history.push('/poll/'+ key.substring(69, 100))
-    console.log();
-  }; 
+
+     var key = pollService.create(data).toString();
+   history.push('/poll/'+ key.substring(69, 100));
+  
+   }; 
 
   return (
     <div class="col-sm input">
      <h1 className="form-title">Create new poll</h1>
-      <form className="form-horizontal">
+      <form className="form-input">
         <fieldset>
 
           <div class="form-group">
-            <label for="inputEmail" class="col-lg-2">
-              Poll Title
+            <label for="title" className="col-lg-2">
+              Title
             </label>
             <div class="col-lg-10">
               <input
@@ -78,7 +79,8 @@ const Input = () => {
                 value={polls.title}
                 name="title"
                 onChange={handleInput}
-                placeholder="Title"
+                placeholder=""
+                required
               />
             </div>
           </div>
@@ -86,28 +88,32 @@ const Input = () => {
           {optionState.map((val, idx) => {
             const optionId = `option_title-${idx}`;
             return (
-              <div class="form-group">
+              <div className="form-group">
                 <div key={`option-${idx}`}>
                   <label
-                    class="col-lg-2 control-label"
+                    class="col-lg-3"
                     htmlFor={optionId}
+                    for={optionId}
                   >{`Option #${idx + 1}`}</label>
-                  <div class="col-lg-10">
-                    <input
-                      type="text"
-                      name={optionId}
-                      data-idx={idx}
-                      id={optionId}
-                      className="option_title"
-                      value={optionState[idx].option_title}
-                      onChange={handleOptionChange}
-                    />
-                    <input
+                                      <input
                       className="btn-danger"
                       type="button"
                       value="Remove"
                       onClick={handleRemove}
                     />
+                  <div class="col-lg-10 ">
+                    <input
+                      type="text"
+                      name="option_title"
+                      data-idx={idx}
+                      id={optionId}
+                      className="form-control"
+                      value={optionState[idx].option_title}
+                      onChange={handleOptionChange}
+                    />
+                    
+
+
                   </div>
                 </div>
               </div>

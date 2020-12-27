@@ -1,6 +1,4 @@
 import React, { useState, useEffects } from "react";
-
-
 import { Link, useParams, useHistory } from "react-router-dom";
 import pollService from "../services/pollService";
 import { useList, useListVals } from "react-firebase-hooks/database";
@@ -16,6 +14,7 @@ const Pollpage = () => {
   const [isCopied, setCopied] = useClipboard(
     "http://localhost:3000/poll/" + url.id
   );
+  const [title] = useListVals(pollService.getPollTitle(url.id));
 
   const [voted, setVoted] = useState("");
 
@@ -32,9 +31,12 @@ const Pollpage = () => {
       <Header />
       <div className="container">
         <div className="row">
+        
           {loading && <div class="spinner-border text-danger" />}
-
           <div className="col-sm-6 mx-auto pollpage-item">
+          <h1 className="resultlist-title"> {title[2]} </h1>
+
+
             <div className="pollpage-title">
               <form>
                 <h2>{}</h2>
@@ -46,44 +48,29 @@ const Pollpage = () => {
                       <input
                         className=""
                         type="checkbox"
+                        name="checkbox"
+                        className="checkbox"
                         id={option.option_id}
                         onChange={() => setVoted(option)}
                       />
-                      <label for={option.option_id} class="">
+
+
+                      <label for={option.option_id} className="title-label">
                         {option.option_title}
                       </label>
                     </div>
                   ))}
               </form>
-              <div className="boxes">
-                <input type="checkbox" id="box-1" />
-                <label for="box-1">option</label>
-              </div>
+
              </div>
             <div className="col-sm-6">
-              <button onClick={votePush}> Vote </button>
-              <Link className="btn result-button" to={`/result/${url.id}`}>
-                Result
-              </Link>
-              <a
-                href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-                class="twitter-share-button"
-                data-size="large"
-                data-text="Answer my pollooo"
-                data-url="http://localhost:3000/poll/-MP5TVNcnDQ5HmRDQreN"
-                data-lang="en"
-                data-show-count="false"
-              >
-                Tweet
-              </a>
-              <script
-                async
-                src="https://platform.twitter.com/widgets.js"
-                charset="utf-8"
-              ></script>{" "}
-              <button onClick={setCopied}>
+              <button onClick={votePush} className="btn btn-primary"> Vote </button>
+              
+              <button onClick={setCopied} className="btn btn-warning">
                 {isCopied ? "Copied!" : "Copy Poll Link"}
               </button>
+
+
               </div> 
             
           </div>

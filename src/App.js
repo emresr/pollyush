@@ -9,19 +9,20 @@ import Mainpage from "./components/Mainpage";
 import Header from "./components/Header";
 import Result from "./components/Result";
 
-
+import Layout from "./components/layout/layout";
 
 function App() {
   return (
     <div>
-      <div className="container mt-3"></div>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Mainpage} />
-          <Route exact path="/poll/:id" component={Pollpage} />
-          <Route exact path="/result/:id" component={Result} />
-        </Switch>
-      </BrowserRouter>
+      <Layout>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Mainpage} />
+            <Route exact path="/poll/:id" component={Pollpage} />
+            <Route exact path="/result/:id" component={Result} />
+          </Switch>
+        </BrowserRouter>
+      </Layout>
     </div>
   );
 }

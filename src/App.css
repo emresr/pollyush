@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* header */
 .header-main {
   width: 90%;
@@ -205,22 +209,6 @@
 /* Ek */
 * {
   box-sizing: border-box;
-}
-@media only screen and (min-width: 600px) {
-  body {
-    font-family: Verdana;
-    padding: 10px;
-    background-color: #c25817;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    font-family: Verdana;
-    padding: 10px;
-    background-color: #c25817;
-    background-position: center;
-  }
 }
 
 /* Header/Blog Title */

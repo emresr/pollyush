@@ -56,19 +56,17 @@ const Input = () => {
     };
     pollService.create(data);
 
-     var key = pollService.create(data).toString();
-   history.push('/poll/'+ key.substring(69, 100));
-  
-   }; 
+    var key = pollService.create(data).toString();
+    history.push("/poll/" + key.substring(69, 100));
+  };
 
   return (
-    <div class="col-sm input">
-     <h1 className="form-title">Create new poll</h1>
+    <div class="col-span-6">
+      <h1 className="text-bold text-2xl">Create new poll</h1>
       <form className="form-input">
         <fieldset>
-
           <div class="form-group">
-            <label for="title" className="col-lg-2">
+            <label for="title" className="text-bold text-xl">
               Title
             </label>
             <div class="col-lg-10">
@@ -95,12 +93,13 @@ const Input = () => {
                     htmlFor={optionId}
                     for={optionId}
                   >{`Option #${idx + 1}`}</label>
-                                      <input
-                      className="btn-danger"
-                      type="button"
-                      value="Remove"
-                      onClick={handleRemove}
-                    />
+                  <input
+                    className="bg-blue-200 p-2 text-bold rounded-lg"
+                    type="button"
+                    value="Remove"
+                    onClick={handleRemove}
+                    disabled={optionState.length === 1}
+                  />
                   <div class="col-lg-10 ">
                     <input
                       type="text"
@@ -111,9 +110,6 @@ const Input = () => {
                       value={optionState[idx].option_title}
                       onChange={handleOptionChange}
                     />
-                    
-
-
                   </div>
                 </div>
               </div>
@@ -123,12 +119,12 @@ const Input = () => {
           <input
             onClick={save}
             type="button"
-            className="btn-success"
+            className="bg-yellow-500 p-2 text-bold rounded-lg"
             value="Create!"
           />
           <input
             type="button"
-            className="btn-primary"
+            className="bg-green-500 p-2 text-bold rounded-lg"
             value="Add Option"
             onClick={addOption}
           />

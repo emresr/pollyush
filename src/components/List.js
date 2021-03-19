@@ -7,39 +7,34 @@ const List = () => {
   const [polls, loading] = useList(pollService.getLatest());
   polls.reverse();
 
+  const Winnerid = (key) => {
+    const [optiony] = useListVals(pollService.getWinnerOption(key));
+  };
 
-
-  const Winnerid = (key) => { 
-  const [optiony] = useListVals(pollService.getWinnerOption(key));
-  
-  }
-
-const list = ( 
-<div class="col-sm list">
-      <h6 className="list-title">Latest Polls</h6>
+  const list = (
+    <div class="col-span-6 ">
+      <h6 className="text-5xl text-extrabold text-center">Latest Polls</h6>
       <div>
-      {loading && <div class="spinner-main spinner-border text-danger" />}
+        {loading && <div />}
 
-
-      {!loading &&
-        polls &&
-        polls.map((poll, index) => { 
-          return ( 
-          <div key={polls.poll_id} className="list-item">
-            <Link className="btn list-link" to={`/poll/${poll.key}`}>
-              <span className="poll-title-list">{poll.val().title} </span>
-             </Link>
-
-          </div>
-          );
-})}
+        {!loading &&
+          polls &&
+          polls.map((poll, index) => {
+            return (
+              <div
+                key={polls.poll_id}
+                className="border-2 border-yellow-300 my-2 p-2 rounded-lg bg-green-500 hover:bg-green-600"
+              >
+                <Link className="" to={`/poll/${poll.key}`}>
+                  <span className="text-2xl">{poll.val().title} </span>
+                </Link>
+              </div>
+            );
+          })}
       </div>
-
     </div>
-)
-  return (
-    <> {list} </>
   );
+  return <> {list} </>;
 };
 
 export default List;

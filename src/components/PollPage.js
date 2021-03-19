@@ -2,7 +2,6 @@ import React, { useState, useEffects } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import pollService from "../services/pollService";
 import { useList, useListVals } from "react-firebase-hooks/database";
-import Header from "./Header";
 import useClipboard from "react-use-clipboard";
 
 const Pollpage = () => {
@@ -28,14 +27,11 @@ const Pollpage = () => {
 
   const pollpage = (
     <div>
-      <Header />
       <div className="container">
         <div className="row">
-        
           {loading && <div class="spinner-border text-danger" />}
           <div className="col-sm-6 mx-auto pollpage-item">
-          <h1 className="resultlist-title"> {title[2]} </h1>
-
+            <h1 className="resultlist-title"> {title[2]} </h1>
 
             <div className="pollpage-title">
               <form>
@@ -54,25 +50,23 @@ const Pollpage = () => {
                         onChange={() => setVoted(option)}
                       />
 
-
                       <label for={option.option_id} className="title-label">
                         {option.option_title}
                       </label>
                     </div>
                   ))}
               </form>
-
-             </div>
+            </div>
             <div className="col-sm-6">
-              <button onClick={votePush} className="btn btn-primary"> Vote </button>
-              
+              <button onClick={votePush} className="btn btn-primary">
+                {" "}
+                Vote{" "}
+              </button>
+
               <button onClick={setCopied} className="btn btn-warning">
                 {isCopied ? "Copied!" : "Copy Poll Link"}
               </button>
-
-
-              </div> 
-            
+            </div>
           </div>
         </div>
       </div>
